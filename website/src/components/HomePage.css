@@ -1,0 +1,35 @@
+/*******Navigation Bar Styling**********/
+
+.navbarContainer{
+  width:90%;
+  margin: 0 auto;
+}
+
+.navigationbar{
+  border: 5px solid #F0EDED;
+  border-radius: 0px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 10px;
+}
+
+.logo{
+  font-size: 1.3vw;
+}
+
+.nbitem{
+  font-size: 1vw;
+  /*border: 1px solid blue;*/
+}
+
+.licnbitem{
+  border: 2px solid #51575C;
+  border-radius: 3px;
+}
+
+.lcinner{
+  /*border: 1px solid green;*/
+  margin-left: 4px;
+  margin-right:4px;
+}
