@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import './HomePage.css';
+import React, {Component} from 'react';
+import './NavBar.css';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
-class HomePage extends Component {
-  render() {
+class NavBar extends Component{
+  render(){
     return (
       <div>
         <div className='navbarContainer'>
@@ -21,10 +21,9 @@ class HomePage extends Component {
             </Nav>
           </Navbar>
         </div>
-
       </div>
-    );
+    )
   }
 }
 
-export default HomePage;
+export default NavBar;
