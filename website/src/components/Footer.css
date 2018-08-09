@@ -1,14 +1,16 @@
-.top-border{
+.top-border, .bottom-border{
   border: 2px solid #E3E0E0;
-  width: 90%;
+  width: 98%;
   margin: 0 auto;
-  height:8px;
+  height:5px;
   margin-bottom: 10px;
 }
 
 .footer-grid{
-  width: 90%;
+  width: 98%;
   margin: 0 auto;
+  margin-top:20px;
+  margin-bottom: 20px;
 }
 
 .footer-grid-row{

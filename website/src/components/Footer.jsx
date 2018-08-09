@@ -28,6 +28,7 @@ class Footer extends Component{
             </Col>
           </Row>
         </Grid>
+        <div className='bottom-border'></div>
       </div>
     )
   }
