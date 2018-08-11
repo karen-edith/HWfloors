@@ -5,6 +5,12 @@
   margin: 0 auto;
 }
 
+@media screen and (max-width:767px) {
+  .navbarContainer{
+    text-align: center;
+  }
+}
+
 .navigationbar{
   border: 5px solid #F0EDED;
   border-radius: 0px;
@@ -15,8 +21,20 @@
   margin-bottom: 20px;
 }
 
+@media screen and (min-width: 767px) and (max-width:881px) {
+  .navigationbar{
+    margin-bottom:40px
+  }
+}
+
 .logo{
   font-size: 1.3vw;
+}
+
+@media screen and (max-width:767px) {
+  .logo{
+    font-size: 1.5vw;
+  }
 }
 
 .nbitem{
@@ -24,9 +42,26 @@
   /*border: 1px solid blue;*/
 }
 
+@media screen and (max-width:767px) {
+  .nbitem{
+    border-bottom: 1px solid #F0EDED;
+    font-size: 1.5vw;
+  }
+  .nbitemtop{
+    border-top: 1px solid #F0EDED;
+  }
+}
+
 .licnbitem{
   border: 2px solid #51575C;
   border-radius: 3px;
+}
+
+@media screen and (max-width:767px) {
+  .licnbitem{
+    width:15%;
+    text-align: center;
+  }
 }
 
 .lcinner{
