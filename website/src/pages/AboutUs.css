@@ -1,0 +1,24 @@
+.aboutusgrid{
+  margin-bottom: 2vw;
+}
+
+.aboutusrow{
+  background-color: #DBDADA;
+  font-weight: lighter;
+  font-family: Hiragino Mincho ProN;
+}
+
+.aboutuscol1, .aboutuscol2{
+  padding: 20px;
+  font-size: 1.1vw;
+}
+
+.aboutustitle{
+  text-align: center;
+  font-size: 2.3vw;
+  font-weight: lighter;
+  margin: 0 auto;
+  width: 60%;
+  border-bottom: 1px solid black;
+  margin-bottom: 12px;
+}

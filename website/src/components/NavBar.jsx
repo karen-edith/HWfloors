@@ -3,6 +3,14 @@ import './NavBar.css';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
 class NavBar extends Component{
+
+  aboutus(){
+    window.location.href = 'http://localhost:3000/about'
+  }
+
+  home(){
+    window.location.href = 'http://localhost:3000/home'
+  }
   render(){
     return (
       <div>
@@ -12,8 +20,8 @@ class NavBar extends Component{
               <Navbar.Brand className='logo'> Hardwood Floors </Navbar.Brand>
             </Navbar.Header>
             <Nav pullRight>
-              <NavItem className='nbitem nbitemtop'> HOME </NavItem>
-              <NavItem className='nbitem'> ABOUT US </NavItem>
+              <NavItem className='nbitem nbitemtop' onClick={()=>{this.home()}}> HOME </NavItem>
+              <NavItem className='nbitem' onClick={()=>{this.aboutus()}}>  ABOUT US </NavItem>
               <NavItem className='nbitem'> SERVICES </NavItem>
               <NavItem className='nbitem'> PORTFOLIO </NavItem>
               <NavItem className='nbitem'> CONTACT US </NavItem>

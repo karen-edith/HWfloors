@@ -3,6 +3,7 @@
 .navbarContainer{
   width:98%;
   margin: 0 auto;
+  font-family: Hiragino Mincho ProN;
 }
 
 @media screen and (max-width:767px) {
@@ -40,6 +41,7 @@
 .nbitem{
   font-size: 1vw;
   /*border: 1px solid blue;*/
+  cursor: pointer;
 }
 
 @media screen and (max-width:767px) {
