@@ -11,8 +11,8 @@ class AboutUs extends Component {
         <NavBar/>
         <Grid className='aboutusgrid' fluid>
           <Row className = 'aboutusrow'>
-            <Col className='aboutuscol1' xs={7} sm={7} md={7} lg={7} xl={7}> <Image src={require('../images/city.png')} responsive/></Col>
-            <Col className='aboutuscol2' xs={5} sm={5} md={5} lg={5} xl={5}>
+            <Col className='aboutuscol1' xs={12} sm={7} md={7} lg={7} xl={7}> <Image src={require('../images/city.png')} responsive/></Col>
+            <Col className='aboutuscol2' xs={12} sm={5} md={5} lg={5} xl={5}>
               <div className='aboutustitle'> Who We Are </div>
               <div className='aboutuspar'>
                 <p>

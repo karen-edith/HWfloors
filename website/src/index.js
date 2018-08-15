@@ -9,7 +9,7 @@ import AboutUs from './pages/AboutUs'
 ReactDOM.render(
   <Router>
     <div>
-      <Route path='/home' component={HomePage}></Route>
+      <Route exact path='/' component={HomePage}></Route>
       <Route path='/about' component={AboutUs}></Route>
     </div>
   </Router> , document.getElementById('root'));

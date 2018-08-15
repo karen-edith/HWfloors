@@ -9,7 +9,7 @@ class NavBar extends Component{
   }
 
   home(){
-    window.location.href = 'http://localhost:3000/home'
+    window.location.href = 'http://localhost:3000/'
   }
   render(){
     return (
