@@ -1,0 +1,31 @@
+.contactgrid{
+  font-family: Hiragino Mincho ProN;
+}
+
+.contactrow{
+  background-color: #DBDADA;
+}
+
+.contact-title{
+  padding: 5px;
+  border: 1px solid red;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  text-align: center;
+  font-size: 1.3vw;
+}
+
+.formcontainer{
+  border:1px solid blue;
+  width:85%;
+  margin: 0 auto;
+}
+
+.finput{
+  border:1px solid red;
+  margin-bottom:2.5vw;
+}
+
+.circle1, .circle2{
+  background-color: #51575C;
+}

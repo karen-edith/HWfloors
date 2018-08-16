@@ -5,12 +5,14 @@ import HomePage from './pages/HomePage';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import AboutUs from './pages/AboutUs'
+import Contact from './pages/Contact'
 
 ReactDOM.render(
   <Router>
     <div>
       <Route exact path='/' component={HomePage}></Route>
       <Route path='/about' component={AboutUs}></Route>
+      <Route path='/contact' component={Contact}></Route>
     </div>
   </Router> , document.getElementById('root'));
 registerServiceWorker();
