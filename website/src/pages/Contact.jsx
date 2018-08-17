@@ -21,7 +21,7 @@ class Contact extends Component {
         <NavBar/>
         <Grid className='contactgrid' fluid>
           <Row className='contactrow'>
-            <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+            <Col xs={12} sm={8} md={8} lg={8} xl={8}>
               <div className='contact-title'>We want to Hear from you! Email or Call us for a free estimate today.</div>
 
               <form className='formcontainer'>
@@ -58,7 +58,7 @@ class Contact extends Component {
                 />
               </form>
             </Col>
-            <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+            <Col xs={12} sm={4} md={4} lg={4} xl={4}>
               <div className='circle1'> <div className='circle1-overlay'><Glyphicon className='glyphenvelope' glyph='envelope'/></div></div>
               <div className='circle-email'> HWfloors@gmail.com </div>
               <div className='circle2'> <div className='circle2-overlay'> <Glyphicon className='glyphphone' glyph='earphone'/> </div> </div>
