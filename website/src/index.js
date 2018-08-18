@@ -4,8 +4,10 @@ import './index.css';
 import HomePage from './pages/HomePage';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import AboutUs from './pages/AboutUs'
-import Contact from './pages/Contact'
+import AboutUs from './pages/AboutUs';
+import Contact from './pages/Contact';
+import Porfolio from './pages/Portfolio';
+
 
 ReactDOM.render(
   <Router>
@@ -13,6 +15,7 @@ ReactDOM.render(
       <Route exact path='/' component={HomePage}></Route>
       <Route path='/about' component={AboutUs}></Route>
       <Route path='/contact' component={Contact}></Route>
+      <Route path='/portfolio' component={Porfolio}></Route>
     </div>
   </Router> , document.getElementById('root'));
 registerServiceWorker();
