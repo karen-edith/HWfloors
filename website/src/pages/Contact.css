@@ -52,3 +52,63 @@ left: 35%;
   text-align: center;
   margin-top: 10px;
 }
+
+@media screen and (max-width:766px) {
+  .circle1{
+    text-align: center;
+    margin: 0 auto;
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .circle2{
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .circle-email, .circle-phone{
+    font-size: 1.7vw;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  .circle-email{
+    margin-top: 14px;
+  }
+
+  .circlecontainer{
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 7vw;
+    margin-top: 4vw;
+  }
+
+  .circle1-overlay, .circle2-overlay{
+    top: 36%;
+    left: 38%;
+  }
+
+  .glyphenvelope, .glyphphone{
+    font-size: 3.5vw;
+  }
+
+  .formcontainer{
+    margin-bottom: 4vw;
+  }
+
+  .circle1container, .circle2container{
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+  }
+
+  .contact-title{
+    font-size: 1.8vw;
+  }
+
+}

@@ -59,10 +59,17 @@ class Contact extends Component {
               </form>
             </Col>
             <Col xs={12} sm={4} md={4} lg={4} xl={4}>
-              <div className='circle1'> <div className='circle1-overlay'><Glyphicon className='glyphenvelope' glyph='envelope'/></div></div>
-              <div className='circle-email'> HWfloors@gmail.com </div>
-              <div className='circle2'> <div className='circle2-overlay'> <Glyphicon className='glyphphone' glyph='earphone'/> </div> </div>
-              <div className='circle-phone'> (123) 456-7890 </div>
+              <div className='circlecontainer'>
+                <div className='circle1container'>
+                  <div className='circle1'> <div className='circle1-overlay'><Glyphicon className='glyphenvelope' glyph='envelope'/></div></div>
+                  <div className='circle-email'> HWfloors@gmail.com </div>
+                </div>
+                <div className='circle2container'>
+                  <div className='circle2'> <div className='circle2-overlay'> <Glyphicon className='glyphphone' glyph='earphone'/> </div></div>
+                  <div className='circle-phone'> (123) 456-7890 </div>
+                </div>
+
+              </div>
             </Col>
           </Row>
         </Grid>
