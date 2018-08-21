@@ -6,8 +6,10 @@
 
 .singlePictureGrid{
   width: 60%;
-  border: 1px solid blue;
   display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #E2E0E0;
 }
 
 .galleryPictureGrid{
@@ -28,4 +30,24 @@
 
 .singlePictureRow{
   display: inline-block;
+}
+
+.pictureRow{
+  margin-left: 1px;
+  margin-right: 1px;
+  border: 1px solid red;
+}
+
+.pictureRow1{
+  margin-top: 5px;
+  margin-left: 1px;
+  margin-right: 1px;
+  border: 1px solid red;
+}
+
+.pictureRow5{
+  margin-bottom: 5px;
+  margin-left: 1px;
+  margin-right: 1px;
+  border: 1px solid red;
 }

@@ -18,7 +18,7 @@ class Portfolio extends Component {
             </Row>
           </Grid>
           <Grid className='galleryPictureGrid' fluid>
-            <Row className='pictureRow'>
+            <Row className='pictureRow1'>
               <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol'><Image className='photo' src={require('../images/galleryPhoto1.jpg')} responsive/></Col>
               <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol'><Image className='photo' src={require('../images/galleryPhoto2.jpg')} responsive/></Col>
               <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol'><Image className='photo' src={require('../images/galleryPhoto3.jpg')} responsive/></Col>
@@ -38,7 +38,7 @@ class Portfolio extends Component {
               <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol'><Image className='photo' src={require('../images/galleryPhoto4.jpg')} responsive/></Col>
               <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol'><Image className='photo' src={require('../images/galleryPhoto3.jpg')} responsive/></Col>
             </Row>
-            <Row className='pictureRow'>
+            <Row className='pictureRow5'>
               <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol'><Image className='photo' src={require('../images/galleryPhoto4.jpg')} responsive/></Col>
               <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol'><Image className='photo' src={require('../images/galleryPhoto1.jpg')} responsive/></Col>
               <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol'><Image className='photo' src={require('../images/galleryPhoto6.jpg')} responsive/></Col>
