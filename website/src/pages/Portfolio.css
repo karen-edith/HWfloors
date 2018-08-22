@@ -20,7 +20,9 @@
 
 .photoCol{
   padding:5px;
+  cursor: pointer;
 }
+
 
 .singlePictureCol{
   padding: 10px;
