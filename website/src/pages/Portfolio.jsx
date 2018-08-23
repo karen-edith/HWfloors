@@ -9,6 +9,15 @@ import photo3 from '../images/galleryPhoto3.jpg';
 import photo4 from '../images/galleryPhoto4.jpg';
 import photo5 from '../images/galleryPhoto5.jpg';
 import photo6 from '../images/galleryPhoto6.jpg';
+import photo7 from '../images/galleryPhoto7.jpg';
+import photo8 from '../images/galleryPhoto8.jpg';
+import photo9 from '../images/galleryPhoto9.jpg';
+import photo10 from '../images/galleryPhoto10.jpg';
+import photo11 from '../images/galleryPhoto11.jpg';
+import photo12 from '../images/galleryPhoto12.jpg';
+import photo13 from '../images/galleryPhoto13.jpg';
+import photo14 from '../images/galleryPhoto14.jpg';
+import photo15 from '../images/galleryPhoto15.jpg';
 
 class Portfolio extends Component {
   constructor(props){
@@ -16,7 +25,8 @@ class Portfolio extends Component {
     this.state = {
       singlePicture: photo1,
       opacityArray: ['yes', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no'],
-      pictureArray: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+      pictureRowArray: [0, 3, 6, 9, 12],
+      pictureArray:[photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, photo10, photo11, photo12, photo13, photo14, photo15]
     }
   }
 
@@ -30,7 +40,7 @@ class Portfolio extends Component {
       }
       return null
     })
-    this.setState({opacityArray: opacityArray, singlePicture: picture, opacity:'0.4'})
+    this.setState({opacityArray: opacityArray, singlePicture: picture, opacity:'0.3'})
   }
 
   opacity(index){
@@ -57,31 +67,24 @@ class Portfolio extends Component {
             </Row>
           </Grid>
           <Grid className='galleryPictureGrid' fluid>
-            <Row className='pictureRow1'>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo1, 0)}}><Image ref='photo1' src={require('../images/galleryPhoto1.jpg')} style={this.opacity(0)} responsive/></Col>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo2, 1)}}><Image ref='photo2' src={require('../images/galleryPhoto2.jpg')} style={this.opacity(1)} responsive/></Col>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo3, 2)}}><Image ref='photo3' src={require('../images/galleryPhoto3.jpg')} style={this.opacity(2)} responsive/></Col>
-            </Row>
-            <Row className='pictureRow'>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo4, 3)}}><Image ref='photo4' src={require('../images/galleryPhoto4.jpg')} style={this.opacity(3)} responsive/></Col>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo5, 4)}}><Image ref='photo5' src={require('../images/galleryPhoto5.jpg')} style={this.opacity(4)} responsive/></Col>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo6, 5)}}><Image ref='photo6' src={require('../images/galleryPhoto6.jpg')} style={this.opacity(5)} responsive/></Col>
-            </Row>
-            <Row className='pictureRow'>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo5, 6)}}><Image ref='photo7' src={require('../images/galleryPhoto5.jpg')} style={this.opacity(6)} responsive/></Col>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo1, 7)}}><Image ref='photo8' src={require('../images/galleryPhoto1.jpg')} style={this.opacity(7)} responsive/></Col>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo4, 8)}}><Image ref='photo9' src={require('../images/galleryPhoto4.jpg')} style={this.opacity(8)} responsive/></Col>
-            </Row>
-            <Row className='pictureRow'>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo2, 9)}}><Image ref='photo10' src={require('../images/galleryPhoto2.jpg')} style={this.opacity(9)} responsive/></Col>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo4, 10)}}><Image ref='photo11' src={require('../images/galleryPhoto4.jpg')} style={this.opacity(10)} responsive/></Col>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo3, 11)}}><Image ref='photo12' src={require('../images/galleryPhoto3.jpg')} style={this.opacity(11)} responsive/></Col>
-            </Row>
-            <Row className='pictureRow5'>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo4, 12)}}><Image ref='photo13' src={require('../images/galleryPhoto4.jpg')} style={this.opacity(12)} responsive/></Col>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo1, 13)}}><Image ref='photo14' src={require('../images/galleryPhoto1.jpg')} style={this.opacity(13)} responsive/></Col>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(photo6, 14)}}><Image ref='photo15' src={require('../images/galleryPhoto6.jpg')} style={this.opacity(14)} responsive/></Col>
-            </Row>
+            {
+              this.state.pictureRowArray.map((item, index) => {
+                let number1 = item+1, number2 = item+2, number3 = item+3
+                return(
+                  <Row className='pictureRow' key={index}>
+                    <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item], item)}}>
+                      <Image src={require('../images/galleryPhoto' + number1 + '.jpg')} style={this.opacity(item)} responsive/>
+                    </Col>
+                    <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+1], item+1)}}>
+                      <Image src={require('../images/galleryPhoto' + number2 + '.jpg')} style={this.opacity(item+1)} responsive/>
+                    </Col>
+                    <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+2], item+2)}}>
+                      <Image src={require('../images/galleryPhoto' + number3 + '.jpg')} style={this.opacity(item+2)} responsive/>
+                    </Col>
+                  </Row>
+                )
+              })
+            }
           </Grid>
         </div>
 
