@@ -59,13 +59,13 @@ class Portfolio extends Component {
       <div>
         <NavBar/>
         <div className='galleryContainer'>
-          <Grid className='singlePictureGrid' fluid>
-            <Row className='singlePictureRow'>
-              <Col className='singlePictureCol'>
-                <Image className='singlePhoto' src={this.state.singlePicture} responsive />
-              </Col>
-            </Row>
-          </Grid>
+           <Grid className='singlePictureGrid' fluid>
+             <Row className='singlePictureRow'>
+               <Col className='singlePictureCol'>
+                 <Image className='singlePhoto' src={this.state.singlePicture} responsive />
+               </Col>
+             </Row>
+           </Grid>
           <Grid className='galleryPictureGrid' fluid>
             {
               this.state.pictureRowArray.map((item, index) => {
