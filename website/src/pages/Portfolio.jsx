@@ -26,7 +26,8 @@ class Portfolio extends Component {
       singlePicture: photo1,
       opacityArray: ['yes', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no'],
       pictureRowArray: [0, 3, 6, 9, 12],
-      pictureArray:[photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, photo10, photo11, photo12, photo13, photo14, photo15]
+      pictureArray:[photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, photo10, photo11, photo12, photo13, photo14, photo15],
+      windowWidth: undefined
     }
   }
 
@@ -54,7 +55,22 @@ class Portfolio extends Component {
     }
   }
 
+
+  handleResize() {
+    this.setState({windowWidth: window.innerWidth})
+  }
+
+  componentDidMount() {
+    this.handleResize()
+    window.addEventListener('resize', this.handleResize.bind(this))
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize.bind(this))
+  }
+
   render() {
+    console.log(this.state.windowWidth)
     return(
       <div>
         <NavBar/>
