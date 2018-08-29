@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import {Grid, Row, Col, Image} from 'react-bootstrap';
+import {Grid, Row, Col, Image, Glyphicon} from 'react-bootstrap';
 import './Portfolio.css';
 import photo1 from '../images/galleryPhoto1.jpg';
 import photo2 from '../images/galleryPhoto2.jpg';
@@ -27,13 +27,17 @@ class Portfolio extends Component {
       opacityArray: ['yes', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no'],
       pictureRowArray: [0, 3, 6, 9, 12],
       pictureArray:[photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, photo10, photo11, photo12, photo13, photo14, photo15],
-      windowWidth: undefined
+      windowWidth: window.innerWidth,
+      rows:1
     }
   }
 
   setSinglePicture(picture, index){
+    console.log(index)
+    console.log('hey')
     let opacityArray = this.state.opacityArray.slice()
     opacityArray.map((item, i) => {
+      console.log(i)
       if(i === index) {
         opacityArray[i] = 'yes'
       } else {
@@ -55,7 +59,6 @@ class Portfolio extends Component {
     }
   }
 
-
   handleResize() {
     this.setState({windowWidth: window.innerWidth})
   }
@@ -69,44 +72,156 @@ class Portfolio extends Component {
     window.removeEventListener('resize', this.handleResize.bind(this))
   }
 
-  render() {
-    console.log(this.state.windowWidth)
-    return(
-      <div>
-        <NavBar/>
-        <div className='galleryContainer'>
-           <Grid className='singlePictureGrid' fluid>
-             <Row className='singlePictureRow'>
-               <Col className='singlePictureCol'>
-                 <Image className='singlePhoto' src={this.state.singlePicture} responsive />
-               </Col>
-             </Row>
-           </Grid>
-          <Grid className='galleryPictureGrid' fluid>
-            {
-              this.state.pictureRowArray.map((item, index) => {
-                let number1 = item+1, number2 = item+2, number3 = item+3
-                return(
-                  <Row className='pictureRow' key={index}>
-                    <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item], item)}}>
-                      <Image src={require('../images/galleryPhoto' + number1 + '.jpg')} style={this.opacity(item)} responsive/>
-                    </Col>
-                    <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+1], item+1)}}>
-                      <Image src={require('../images/galleryPhoto' + number2 + '.jpg')} style={this.opacity(item+1)} responsive/>
-                    </Col>
-                    <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+2], item+2)}}>
-                      <Image src={require('../images/galleryPhoto' + number3 + '.jpg')} style={this.opacity(item+2)} responsive/>
-                    </Col>
-                  </Row>
-                )
-              })
-            }
-          </Grid>
-        </div>
+  rightRowSelection(currentRow) {
+    let row
+    let totalNumberOfRows = this.state.pictureRowArray.length
+    if(currentRow < totalNumberOfRows) {row = 'middle'}
+    else if(currentRow === totalNumberOfRows) {row='last'}
 
-        <Footer/>
-      </div>
-    )
+    switch(row){
+      case 'middle':
+          this.setState({rows:currentRow+1})
+          break
+      case 'last':
+          this.setState({rows:totalNumberOfRows})
+          break
+      default:
+          console.log(row)
+          break
+    }
+  }
+
+  leftRowSelection(currentRow){
+    let row
+    let totalNumberOfRows = this.state.pictureRowArray.length
+    if(currentRow === 1){row = 'first'}
+    else if((currentRow >1) && (currentRow < totalNumberOfRows)) {row = 'middle'}
+    else if(currentRow === totalNumberOfRows) {row='last'}
+
+    switch(row){
+      case 'first':
+          this.setState({rows:1})
+          break
+      case 'middle':
+      case 'last':
+          this.setState({rows:currentRow-1})
+          break
+      default:
+          console.log(row)
+          break
+    }
+  }
+
+  render() {
+    let width = this.state.windowWidth
+    let block
+    if(width <= 767) { block = 'below'}
+    else if (width > 767) { block ='next to'}
+
+    switch(block) {
+      case 'next to':
+          return(
+        <div>
+          <NavBar/>
+          <div className='galleryContainer'>
+             <Grid className='singlePictureGrid' fluid>
+               <Row className='singlePictureRow'>
+                 <Col className='singlePictureCol'>
+                   <Image className='singlePhoto' src={this.state.singlePicture} responsive />
+                 </Col>
+               </Row>
+             </Grid>
+            <Grid className='galleryPictureGrid' fluid>
+              {
+                this.state.pictureRowArray.map((item, index) => {
+                  let number1 = item+1, number2 = item+2, number3 = item+3
+                  return(
+                    <Row className='pictureRow' key={index}>
+                      <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item], item)}}>
+                        <Image src={require('../images/galleryPhoto' + number1 + '.jpg')} style={this.opacity(item)} responsive/>
+                      </Col>
+                      <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+1], item+1)}}>
+                        <Image src={require('../images/galleryPhoto' + number2 + '.jpg')} style={this.opacity(item+1)} responsive/>
+                      </Col>
+                      <Col xs={4} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+2], item+2)}}>
+                        <Image src={require('../images/galleryPhoto' + number3 + '.jpg')} style={this.opacity(item+2)} responsive/>
+                      </Col>
+                    </Row>
+                  )
+                })
+              }
+            </Grid>
+          </div>
+
+          <Footer/>
+        </div>
+      )
+      case 'below':
+          return(
+          <div>
+          <NavBar/>
+          <div className='galleryContainer'>
+             <Grid className='singlePictureGrid' fluid>
+               <Row className='singlePictureRow'>
+                 <Col className='singlePictureCol'>
+                   <Image className='singlePhoto' src={this.state.singlePicture} responsive />
+                 </Col>
+               </Row>
+             </Grid>
+            <Grid className='galleryPictureGrid' fluid>
+              {
+                this.state.pictureRowArray.map((item, index) => {
+                  let firstImage = index+1, secondImage = index+2, thirdImage = index+3
+                  let rowImage1 = this.state.rows, rowImage2 = this.state.rows+1, rowImage3 = this.state.rows+2
+                  if ((firstImage === rowImage1) && (secondImage === rowImage2) && (thirdImage === rowImage3)){
+                    return(
+                      <Row className='pictureRow' key={index}>
+                        <Col xs={2} className='photoCol'></Col>
+                        <Col xs={1} className='photoCol menuRight'
+                          onClick={()=>{
+                          this.leftRowSelection(index+1);
+                          if((index+1>1) && (index+1<=this.state.pictureRowArray.length)){
+                            this.setSinglePicture(this.state.pictureArray[item-3], item-3)
+                          } else if(index+1 === 1){
+                            this.setSinglePicture(this.state.pictureArray[item], item)
+                          }
+                          }}><Glyphicon glyph = 'menu-left'/></Col>
+                        <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item], item)}}>
+                          <Image src={require('../images/galleryPhoto' + firstImage + '.jpg')} style={this.opacity(item)} responsive/>
+                        </Col>
+                        <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+1], item+1)}}>
+                          <Image src={require('../images/galleryPhoto' + secondImage + '.jpg')} style={this.opacity(item+1)} responsive/>
+                        </Col>
+                        <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+2], item+2)}}>
+                          <Image src={require('../images/galleryPhoto' + thirdImage + '.jpg')} style={this.opacity(item+2)} responsive/>
+                        </Col>
+                        <Col xs={1} className='photoCol menuLeft'
+                          onClick={()=>{this.rightRowSelection(index+1);
+                            if(index+1 < this.state.pictureRowArray.length){
+                              this.setSinglePicture(this.state.pictureArray[item+3], item+3)
+                            } else if(index+1 === this.state.pictureRowArray.length){
+                              this.setSinglePicture(this.state.pictureArray[item], item)
+                            }
+                            }}>
+                            <Glyphicon glyph = 'menu-right'/>
+                        </Col>
+                        <Col xs={2} className='photoCol'></Col>
+                      </Row>
+                    )
+                  } else return null
+
+                })
+              }
+            </Grid>
+          </div>
+
+          <Footer/>
+          </div>
+        )
+      default:
+          return null
+    }
+
   }
 }
 
