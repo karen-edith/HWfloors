@@ -112,6 +112,16 @@ class Portfolio extends Component {
     }
   }
 
+  rightArrowColor(){
+    if(this.state.rows === this.state.pictureRowArray.length){return {color:'#F0EDED'}}
+    else{return {color:'black'}}
+  }
+
+  leftArrowColor(){
+    if(this.state.rows === 1){return {color:'#F0EDED'}}
+    else{return {color:'black'}}
+  }
+
   render() {
     let width = this.state.windowWidth
     let block
@@ -185,7 +195,7 @@ class Portfolio extends Component {
                           } else if(index+1 === 1){
                             this.setSinglePicture(this.state.pictureArray[item], item)
                           }
-                          }}><Glyphicon glyph = 'menu-left'/></Col>
+                        }}><Glyphicon glyph = 'menu-left' style={this.leftArrowColor()}/></Col>
                         <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item], item)}}>
                           <Image src={require('../images/galleryPhoto' + firstImage + '.jpg')} style={this.opacity(item)} responsive/>
                         </Col>
@@ -203,7 +213,7 @@ class Portfolio extends Component {
                               this.setSinglePicture(this.state.pictureArray[item], item)
                             }
                             }}>
-                            <Glyphicon glyph = 'menu-right'/>
+                            <Glyphicon glyph = 'menu-right' style={this.rightArrowColor()}/>
                         </Col>
                         <Col xs={2} className='photoCol'></Col>
                       </Row>
