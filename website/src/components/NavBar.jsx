@@ -20,6 +20,10 @@ class NavBar extends Component{
     window.location.href = 'http://localhost:3000/portfolio'
   }
 
+  services(){
+    window.location.href = 'http://localhost:3000/portfolio'
+  }
+
   render(){
     return (
       <div>
@@ -34,7 +38,7 @@ class NavBar extends Component{
               <NavItem className='nbitem'> SERVICES </NavItem>
               <NavItem className='nbitem' onClick={()=>{this.portfolio()}}> PORTFOLIO </NavItem>
               <NavItem className='nbitem' onClick={()=>{this.contact()}}> CONTACT US </NavItem>
-              <NavItem className='nbitem'> <div className='licnbitem'> <div className='lcinner'> LIC # 345678 </div> </div> </NavItem>
+              <NavItem className='nbitem' onClick={()=>{this.services()}}> <div className='licnbitem'> <div className='lcinner'> LIC # 345678 </div> </div> </NavItem>
             </Nav>
           </Navbar>
         </div>

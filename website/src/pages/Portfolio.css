@@ -65,17 +65,14 @@
 
   .singlePictureGrid{
     width: 100%;
-    border: 1px solid red;
     background-color: #E2E0E0;
   }
 
   .galleryPictureGrid{
     width: 100%;
-    border: 1px solid red;
   }
 
 }
 
 .menuRight, .menuLeft{
-  border:1px solid red;
 }

@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Porfolio from './pages/Portfolio';
+import Services from './pages/Services';
 
 
 ReactDOM.render(
@@ -16,6 +17,7 @@ ReactDOM.render(
       <Route path='/about' component={AboutUs}></Route>
       <Route path='/contact' component={Contact}></Route>
       <Route path='/portfolio' component={Porfolio}></Route>
+      <Route path='/services' component={Services}></Route>
     </div>
   </Router> , document.getElementById('root'));
 registerServiceWorker();
