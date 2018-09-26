@@ -1,0 +1,45 @@
+.servicesGrid{
+  width: 98%;
+}
+
+.servicesCol {
+  font-family: Hiragino Mincho ProN;
+}
+
+.servicesColTitle {
+  color: #51575C;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.servicesColLine {
+  border-top: 2px solid #EAE7E7;
+}
+
+.servicesColDescription {
+  font-size: 12px;
+  margin-bottom: 25px;
+  font-weight: lighter;
+  line-height: 20px;
+}
+
+.servicesColBottomDescription {
+  font-family: Georgia;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: lighter;
+  margin-bottom: 15px;
+}
+
+.servicesRow {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.servicesCol {
+  display: flex;
+  flex-direction: column;
+}
