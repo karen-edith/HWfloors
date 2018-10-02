@@ -1,10 +1,20 @@
 import React, {Component} from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import {Grid, Col, Row} from 'react-bootstrap';
+import {Grid, Col, Row Image, Glyphicon} from 'react-bootstrap';
 import './Services.css';
+import installing from '../images/Installation.png';
+import repair from '../images/repair.jpg';
+import finishing from '../images/finishing.jpg'
 
 class Services extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      photoArray: [installing, finishing, repair]
+    }
+  }
 
   render(){
     return(
@@ -35,7 +45,14 @@ class Services extends Component {
             </Col>
           </Row>
         </Grid>
-        <Footer />
+        <Grid className='pictureGrid' fluid>
+          <Row>
+            <Image src={this.state.photoArray[0]} responsive/>
+            <div className='leftArrow'> <Glyphicon glyph='chevron-left'/></div>
+            <div className='rightArrow'> <Glyphicon glyph='chevron-right'/></div>
+          </Row>
+        </Grid>
+        <Footer/>
       </div>
     )
   }

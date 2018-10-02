@@ -43,3 +43,51 @@
   display: flex;
   flex-direction: column;
 }
+
+.carouselDiv{
+  width: 100%;
+  background-color: #E3E0E0;
+  height: 427px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #C9C8C8;
+  border-bottom: 1px solid #C9C8C8;
+  margin-bottom: 20px;
+}
+
+.carouselComponent {
+  width: 96%;
+  margin: 0 auto;
+}
+
+.pictureGrid{
+  position: relative;
+}
+
+.leftArrow{
+  border: 2px solid red;
+  position:absolute;
+  top:50%;
+  left:2%;
+  z-index: 10;
+  color: white;
+  opacity: 0.5;
+  font-size: 30px;
+}
+
+.rightArrow{
+  border: 2px solid red;
+  position:absolute;
+  top:50%;
+  right:2%;
+  z-index: 10;
+  color: white;
+  opacity: 0.5;
+  font-size: 30px;
+}
+
+.leftArrow:hover, .rightArrow:hover {
+  color: white;
+  opacity: 1;
+}
