@@ -61,9 +61,13 @@
   margin: 0 auto;
 }
 
+
+
+
 .pictureGrid{
   position: relative;
   margin-bottom: 20px;
+  border:1px solid blue;
 }
 
 .leftArrow{
@@ -91,4 +95,23 @@
 .leftArrow:hover, .rightArrow:hover {
   color: white;
   opacity: 1;
+}
+
+#slider{
+  transform:translateX(-200px);
+  transition: transform 1000ms ease-in;
+}
+
+.slideIn{
+  transform: translateX(0);
+}
+
+.pictureRowCenter{
+  margin: 0 auto;
+  border:1px solid red;
+  width: 100%;
+}
+
+.ImageWidth{
+  width: 100%;
 }

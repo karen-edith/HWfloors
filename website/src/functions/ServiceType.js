@@ -21,8 +21,6 @@ var ServiceType = function() {
               your wood floors! Our installation services include: Removal of old floor (carpet, etc.),
               Glue down installations, Nail down installations, Sub-floor building,
               Installing over existing foundations and Installing over concrete slabs.
-              We are detailed oriented, fast and friendly. We are clean and punctual and
-              client satisfaction is of most importance to us!
             </div>
             <div className='servicesColBottomDescription'>
               We have many years of experience and can install on just about all sub-flooring surfaces
@@ -50,11 +48,7 @@ var ServiceType = function() {
                 coat to the floor. Surface finishes are durable. They resist
                 moisture and are easily maintained. Penetrating Stains and Finishes
                 penetrate into the wood and form a seal. The stain soaks in and a
-                Polyurethane coating gives a low gloss satin sheen that can
-                be maintained with an additional thin coat applied. Acrylic finishes
-                provide an extremely hard, durable barrier to moisture, dirt, wear
-                and tear because the finish is actually forced into the pores of the
-                wood at the factory. 
+                Polyurethane coating
               </div>
               <div className='servicesColBottomDescription'>
                 All City Hardwood Floors, Inc has Highly Skilled and Experienced
