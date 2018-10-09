@@ -97,15 +97,6 @@
   opacity: 1;
 }
 
-#slider{
-  transform:translateX(-200px);
-  transition: transform 1000ms ease-in;
-}
-
-.slideIn{
-  transform: translateX(0);
-}
-
 .pictureRowCenter{
   margin: 0 auto;
   border:1px solid red;
@@ -114,4 +105,27 @@
 
 .ImageWidth{
   width: 100%;
+}
+
+.none{
+  transform: none;
+}
+
+@keyframes mymove {
+    0%   {transform: translateX(0px);}
+    100% {transform: translateX(-999px);}
+}
+
+.lefttransx{
+  animation: mymove 2s;
+  animation-fill-mode: forwards;
+}
+
+.lefttransition{
+  animation: mymove 2s;
+  animation-fill-mode: forwards;
+}
+
+.hide{
+  visibility: hidden;
 }

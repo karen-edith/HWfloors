@@ -4,8 +4,8 @@ import Footer from '../components/Footer';
 import {Grid, Row, Image, Glyphicon} from 'react-bootstrap';
 import './Services.css';
 import installing from '../images/Installation.png';
-import finishing from '../images/repair.jpg';
-import repairing from '../images/finishing.jpg';
+import repairing from '../images/repair.jpg';
+import finishing from '../images/finishing.jpg';
 import ServiceSelection from '../functions/ServiceSelection';
 //import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
@@ -16,8 +16,10 @@ class Services extends Component {
     this.state = {
       photoArray:[installing, finishing, repairing],
       currentPhoto: installing,
-      backgroundPhoto: repairing,
-      switch:false
+      backgroundPhoto: installing,
+      switch:false,
+      test: false,
+      something: false
     }
   }
 
@@ -30,20 +32,6 @@ class Services extends Component {
     }
   }
 
-  translationFunction(){
-    return{
-        transform: 'translateX(-1500px)',
-        transition: 'transform 3000ms ease-in',
-    }
-
-  }
-
-  nonTranslationFunction(){
-    return{
-        transform: 'none'
-    }
-  }
-
   render(){
     return(
       <div>
@@ -51,17 +39,36 @@ class Services extends Component {
         {ServiceSelection().selectType(this.state.currentPhoto, installing, finishing, repairing)}
         <Grid className='pictureGrid' fluid>
           <Row style={this.backgroundStyles()} className='pictureRowCenter'>
-            <Image style={this.state.switch ? this.translationFunction() : this.nonTranslationFunction()} className='ImageWidth' src={this.state.currentPhoto} responsive />
+            <Image className={!this.state.switch ? 'ImageWidth none' : 'hide'} src={this.state.currentPhoto} responsive />
+            <Image className={(this.state.something)? 'ImageWidth hide' : (!this.state.switch ? 'ImageWidth hide' : 'ImageWdith lefttransx')} src={this.state.currentPhoto} responsive />
+            <Image className={(this.state.something )? 'ImageWidth lefttransition' : 'ImageWdith hide' } src={this.state.currentPhoto} responsive />
             <div className='leftArrow' onClick={()=>{
               this.state.photoArray.map((item, index)=>{
-                this.setState({switch:false})
-                if(item === this.state.backgroundPhoto) {
-                  if(index !== 0) {
-                    let test = this.state.photoArray.slice()
-                    this.setState({backgroundPhoto:test[index-1], currentPhoto:test[index], switch:true})
-                  } else if (index === 0) {
-                    let test = this.state.photoArray.slice()
-                    this.setState({backgroundPhoto: test[2], currentPhoto:test[0], switch:true})
+                let test = this.state.photoArray.slice()
+                if(item === this.state.currentPhoto) {
+                  if((index === 0) && (this.state.backgroundPhoto === installing)) {
+                    console.log('k')
+                    this.setState({backgroundPhoto:test[index+2], currentPhoto:test[index], switch:true, something: true})
+                  } else if ((index === 0) && (this.state.backgrounPhoto !== installing)) {
+                    console.log('a')
+                    this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index+2], something: false})
+                  } else if ((index !== 0) && (index!==1)) {
+                      if(index%2 !==0) {
+                        console.log('r')
+                        this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: true})
+                      } else if (index%2 === 0) {
+                        console.log('e')
+                        this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: false})
+                      }
+                  } else if ((index === 1)) {
+                      if(test.length%2 !== 0) {
+                        console.log('n')
+                        this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: true})
+                      } else if(test.length%2 === 0) {
+                        console.log('g')
+                        this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: false})
+                      }
+
                   }
                 }
                 return null

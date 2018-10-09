@@ -67,7 +67,7 @@ var ServiceType = function() {
         <Grid className='servicesGrid' fluid>
           <Row className='servicesRow'>
             <Col className='servicesCol' xs={5} sm={5} md={5} lg={5} xl={5}>
-              <div className='servicesColTitle'> Hardwood Floor Finishing</div>
+              <div className='servicesColTitle'> Hardwood Floor repairing</div>
               <div className='servicesColLine'> </div>
             </Col>
             <Col className='servicesCol' xs={7} sm={7} md={7} lg={7} xl={7}>
