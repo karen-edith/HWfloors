@@ -18,8 +18,9 @@ class Services extends Component {
       currentPhoto: installing,
       backgroundPhoto: installing,
       switch:false,
-      test: false,
-      something: false
+      end: false,
+      something: false,
+      testing: false
     }
   }
 
@@ -46,29 +47,58 @@ class Services extends Component {
               this.state.photoArray.map((item, index)=>{
                 let test = this.state.photoArray.slice()
                 if(item === this.state.currentPhoto) {
-                  if((index === 0) && (this.state.backgroundPhoto === installing)) {
-                    console.log('k')
-                    this.setState({backgroundPhoto:test[index+2], currentPhoto:test[index], switch:true, something: true})
-                  } else if ((index === 0) && (this.state.backgrounPhoto !== installing)) {
-                    console.log('a')
-                    this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index+2], something: false})
-                  } else if ((index !== 0) && (index!==1)) {
-                      if(index%2 !==0) {
-                        console.log('r')
-                        this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: true})
-                      } else if (index%2 === 0) {
-                        console.log('e')
-                        this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: false})
+                  if ((index === 0) && (this.state.backgroundPhoto === installing)){
+                    console.log('k1')
+                    this.setState({backgroundPhoto:test[index+2], currentPhoto:test[index], switch:true, something: false})
+                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing)) {
+                      if (!this.state.something) {
+                        console.log('a1')
+                        this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index+2], something: true})
+                      } else if (this.state.something){
+                        console.log('a1')
+                        this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index+2], something: false})
                       }
-                  } else if ((index === 1)) {
-                      if(test.length%2 !== 0) {
-                        console.log('n')
-                        this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: true})
-                      } else if(test.length%2 === 0) {
-                        console.log('g')
-                        this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: false})
-                      }
+                  }
 
+                  else if ((index !== 0) && (index!==1)) {
+                      if(index%2 !==0) {
+                        if(!this.state.something) {
+                          console.log('r1')
+                          this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: true})
+                        } else if (this.state.something) {
+                          console.log('r1')
+                          this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: false})
+                        }
+                      } else if (index%2 === 0) {
+                        if(!this.state.something) {
+                          console.log('e1')
+                          this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: true})
+                        } else if (this.state.something) {
+                          console.log('e1')
+                          this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: false})
+                        }
+                      }
+                  }
+
+                  else if ((index === 1)) {
+                      if(test.length%2 !== 0) {
+                        if(!this.state.something) {
+                          console.log('n1')
+                          this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: true})
+                        } else if(this.state.something) {
+                          console.log('n1')
+                          this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: false})
+                        }
+                      }  else if(test.length%2 === 0) {
+                        if(!this.state.something) {
+                          console.log('g1')
+                          this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: true})
+                        } else if (this.state.something) {
+                          console.log('g1')
+                          this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: false})
+                        }
+
+                      }
                   }
                 }
                 return null
