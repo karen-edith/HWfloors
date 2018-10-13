@@ -111,18 +111,33 @@
   transform: none;
 }
 
-@keyframes mymove {
+@keyframes leftmove {
     0%   {transform: translateX(0px);}
     100% {transform: translateX(-999px);}
 }
 
+@keyframes rightmove {
+    0%   {transform: translateX(0px);}
+    100% {transform: translateX(999px);}
+}
+
 .lefttransx{
-  animation: mymove 2s;
+  animation: leftmove 2s;
   animation-fill-mode: forwards;
 }
 
 .lefttransition{
-  animation: mymove 2s;
+  animation: leftmove 2s;
+  animation-fill-mode: forwards;
+}
+
+.righttransx{
+  animation: rightmove 2s;
+  animation-fill-mode: forwards;
+}
+
+.righttransition{
+  animation: rightmove 2s;
   animation-fill-mode: forwards;
 }
 

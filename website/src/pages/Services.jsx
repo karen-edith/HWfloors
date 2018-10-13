@@ -18,9 +18,8 @@ class Services extends Component {
       currentPhoto: installing,
       backgroundPhoto: installing,
       switch:false,
-      end: false,
       something: false,
-      testing: false
+      forwards: false
     }
   }
 
@@ -40,10 +39,27 @@ class Services extends Component {
         {ServiceSelection().selectType(this.state.currentPhoto, installing, finishing, repairing)}
         <Grid className='pictureGrid' fluid>
           <Row style={this.backgroundStyles()} className='pictureRowCenter'>
-            <Image className={!this.state.switch ? 'ImageWidth none' : 'hide'} src={this.state.currentPhoto} responsive />
-            <Image className={(this.state.something)? 'ImageWidth hide' : (!this.state.switch ? 'ImageWidth hide' : 'ImageWdith lefttransx')} src={this.state.currentPhoto} responsive />
-            <Image className={(this.state.something )? 'ImageWidth lefttransition' : 'ImageWdith hide' } src={this.state.currentPhoto} responsive />
+            {
+              !this.state.forwards ?
+              (
+                <div>
+                  <Image className={!this.state.switch ? 'ImageWidth none' : 'hide'} src={this.state.currentPhoto} responsive />
+                  <Image className={(this.state.something)? 'ImageWidth hide' : (!this.state.switch ? 'ImageWidth hide' : 'ImageWdith lefttransx')} src={this.state.currentPhoto} responsive />
+                  <Image className={(this.state.something )? 'ImageWidth lefttransition' : 'ImageWdith hide' } src={this.state.currentPhoto} responsive />
+                </div>
+              ):
+              (
+                <div>
+                  <Image className={(this.state.something)? 'ImageWidth hide' : (!this.state.switch ? 'ImageWidth hide' : 'ImageWdith righttransx')} src={this.state.currentPhoto} responsive />
+                  <Image className={(this.state.something )? 'ImageWidth righttransition' : 'ImageWdith hide' } src={this.state.currentPhoto} responsive />
+                </div>
+              )
+
+
+            }
+
             <div className='leftArrow' onClick={()=>{
+              this.setState({forwards:false})
               this.state.photoArray.map((item, index)=>{
                 let test = this.state.photoArray.slice()
                 if(item === this.state.currentPhoto) {
@@ -105,14 +121,62 @@ class Services extends Component {
               })
             }}> <Glyphicon glyph='chevron-left'/></div>
             <div className='rightArrow' onClick={()=>{
+              this.setState({forwards:true})
               this.state.photoArray.map((item, index)=>{
+                let test = this.state.photoArray.slice()
                 if(item === this.state.currentPhoto) {
-                  if(index !== 2) {
-                    let test = this.state.photoArray.slice()
-                    this.setState({currentPhoto: test[index+1]})
-                  } else if (index === 2) {
-                    let test = this.state.photoArray.slice()
-                    this.setState({currentPhoto: test[0]})
+                  if ((index === 0) && (this.state.backgroundPhoto === installing)){
+                    console.log('k1')
+                    this.setState({backgroundPhoto:test[index+1], currentPhoto:test[index], switch:true, something: false})
+                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing)) {
+                      if (!this.state.something) {
+                        console.log('a1')
+                        this.setState({backgroundPhoto: test[index+2], currentPhoto:test[index+1], something: true})
+                      } else if (this.state.something){
+                        console.log('a1')
+                        this.setState({backgroundPhoto: test[index+2], currentPhoto:test[index+1], something: false})
+                      }
+                  }
+
+                  else if ((index !== 0) && (index!==2)) {
+                      if(index%2 !==0) {
+                        if(!this.state.something) {
+                          console.log('r1')
+                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: true})
+                        } else if (this.state.something) {
+                          console.log('r1')
+                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: false})
+                        }
+                      } else if (index%2 === 0) {
+                        if(!this.state.something) {
+                          console.log('e1')
+                          this.setState({backgroundPhoto: test[index+2], currentPhoto:test[index+1], something: true})
+                        } else if (this.state.something) {
+                          console.log('e1')
+                          this.setState({backgroundPhoto: test[index+2], currentPhoto:test[index+1], something: false})
+                        }
+                      }
+                  }
+
+                  else if ((index === 2)) {
+                      if(test.length%2 !== 0) {
+                        if(!this.state.something) {
+                          console.log('n1')
+                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: true})
+                        } else if(this.state.something) {
+                          console.log('n1')
+                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: false})
+                        }
+                      }  else if(test.length%2 === 0) {
+                        if(!this.state.something) {
+                          console.log('g1')
+                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: true})
+                        } else if (this.state.something) {
+                          console.log('g1')
+                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: false})
+                        }
+
+                      }
                   }
                 }
                 return null
