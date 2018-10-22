@@ -64,17 +64,23 @@ class Services extends Component {
               this.setState({forwards:false})
               this.state.photoArray.map((item, index)=>{
                 let test = this.state.photoArray.slice()
+                console.log(this.state.rightCounter)
+                console.log(this.state.leftCounter)
                 if(item === this.state.currentPhoto) {
                   if ((index === 0) && (this.state.backgroundPhoto === installing) && (!this.state.switch)){
                     console.log('k1')
                     let leftCounter
                     if(this.state.leftCounter === 0) {leftCounter = 1}
                     else if(this.state.leftCounter === 1) {leftCounter = 2}
+                    else if(this.state.leftCounter === 2) {leftCounter = 2}
+
                     this.setState({backgroundPhoto:test[index+2], currentPhoto:test[index], switch:true, something: false, leftCounter: leftCounter})
-                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.rightCounter === 0 || this.state.rightCounter === 2)) {
+                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.rightCounter === 0)) {
+
                       let leftCounter
                       if(this.state.leftCounter === 0) {leftCounter = 1}
                       else if(this.state.leftCounter === 1) {leftCounter = 2}
+                      else if(this.state.leftCounter === 2) {leftCounter = 2}
 
                       if (!this.state.something) {
                         console.log('a1')
@@ -83,11 +89,26 @@ class Services extends Component {
                         console.log('a1')
                         this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index+2], something: false, leftCounter:leftCounter})
                       }
+                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.rightCounter === 2)) {
+
+                      let leftCounter
+                      if(this.state.leftCounter === 0) {leftCounter = 1}
+                      else if(this.state.leftCounter === 1) {leftCounter = 2}
+                      else if(this.state.leftCounter === 2) {leftCounter = 2}
+
+                      if (!this.state.something) {
+                        console.log('a1')
+                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: true, leftCounter:leftCounter, rightCounter:0})
+                      } else if (this.state.something){
+                        console.log('a1')
+                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: false, leftCounter:leftCounter, rightCounter:0})
+                      }
                   } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.rightCounter === 1)) {
 
                       let leftCounter
                       if(this.state.leftCounter === 0) {leftCounter = 1}
                       else if(this.state.leftCounter === 1) {leftCounter = 2}
+                      else if(this.state.leftCounter === 2) {leftCounter = 2}
 
                       if (!this.state.something) {
                         console.log('a1')
@@ -100,11 +121,12 @@ class Services extends Component {
 
 
 
-                  else if ((index !== 0) && (index!==1) && (this.state.rightCounter === 0 || this.state.rightCounter === 2)) {
+                  else if ((index !== 0) && (index!==1) && (this.state.rightCounter === 0)) {
 
                       let leftCounter
                       if(this.state.leftCounter === 0) {leftCounter = 1}
                       else if(this.state.leftCounter === 1) {leftCounter = 2}
+                      else if(this.state.leftCounter === 2) {leftCounter = 2}
 
                       if(index%2 !==0) {
                         if(!this.state.something) {
@@ -123,11 +145,36 @@ class Services extends Component {
                           this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: false, leftCounter: leftCounter})
                         }
                       }
+                  } else if ((index !== 0) && (index!==1) && (this.state.rightCounter === 2)) {
+
+                      let leftCounter
+                      if(this.state.leftCounter === 0) {leftCounter = 1}
+                      else if(this.state.leftCounter === 1) {leftCounter = 2}
+                      else if(this.state.leftCounter === 2) {leftCounter = 2}
+
+                      if(index%2 !==0) {
+                        if(!this.state.something) {
+                          console.log('r1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: true, leftCounter: leftCounter, rightCounter:0})
+                        } else if (this.state.something) {
+                          console.log('r1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: false, leftCounter: leftCounter, rightCounter:0})
+                        }
+                      } else if (index%2 === 0) {
+                        if(!this.state.something) {
+                          console.log('e1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: true, leftCounter: leftCounter, rightCounter:0})
+                        } else if (this.state.something) {
+                          console.log('e1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: false, leftCounter: leftCounter, rightCounter:0})
+                        }
+                      }
                   } else if ((index !== 0) && (index!==1) && (this.state.rightCounter === 1)) {
 
                       let leftCounter
                       if(this.state.leftCounter === 0) {leftCounter = 1}
                       else if(this.state.leftCounter === 1) {leftCounter = 2}
+                      else if(this.state.leftCounter === 2) {leftCounter = 2}
 
                       if(index%2 !==0) {
                         if(!this.state.something) {
@@ -150,11 +197,12 @@ class Services extends Component {
 
 
 
-                  else if ((index === 1) && (this.state.rightCounter === 0 || this.state.rightCounter === 2)) {
+                  else if ((index === 1) && (this.state.rightCounter === 0)) {
 
                      let leftCounter
                      if(this.state.leftCounter === 0) {leftCounter = 1}
                      else if(this.state.leftCounter === 1) {leftCounter = 2}
+                     else if(this.state.leftCounter === 2) {leftCounter = 2}
 
                       if(test.length%2 !== 0) {
                         if(!this.state.something) {
@@ -174,11 +222,37 @@ class Services extends Component {
                         }
 
                       }
+                  } else if ((index === 1) && (this.state.rightCounter === 2)) {
+
+                     let leftCounter
+                     if(this.state.leftCounter === 0) {leftCounter = 1}
+                     else if(this.state.leftCounter === 1) {leftCounter = 2}
+                     else if(this.state.leftCounter === 2) {leftCounter = 2}
+
+                      if(test.length%2 !== 0) {
+                        if(!this.state.something) {
+                          console.log('n1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: true, leftCounter:leftCounter, rightCounter:0})
+                        } else if(this.state.something) {
+                          console.log('n1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: false, leftCounter:leftCounter, rightCounter:0})
+                        }
+                      }  else if(test.length%2 === 0) {
+                        if(!this.state.something) {
+                          console.log('g1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: true, leftCounter:leftCounter, rightCounter:0})
+                        } else if (this.state.something) {
+                          console.log('g1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: false, leftCounter:leftCounter, rightCounter:0})
+                        }
+
+                      }
                   } else if ((index === 1) && (this.state.rightCounter === 1)) {
 
                      let leftCounter
                      if(this.state.leftCounter === 0) {leftCounter = 1}
                      else if(this.state.leftCounter === 1) {leftCounter = 2}
+                     else if(this.state.leftCounter === 2) {leftCounter = 2}
 
                       if(test.length%2 !== 0) {
                         if(!this.state.something) {
@@ -208,19 +282,24 @@ class Services extends Component {
               this.setState({forwards:true})
               this.state.photoArray.map((item, index)=>{
                 let test = this.state.photoArray.slice()
+                console.log(this.state.rightCounter)
+                console.log(this.state.leftCounter)
 
                 if(item === this.state.currentPhoto) {
                   if ((index === 0) && (this.state.backgroundPhoto === installing) && (!this.state.switch)){
                     let rightCounter
                     if(this.state.rightCounter === 0) {rightCounter = 1}
                     else if(this.state.rightCounter === 1) {rightCounter = 2}
+                    else if(this.state.rightCounter === 2) {rightCounter = 2}
+
                     console.log('k1')
                     this.setState({backgroundPhoto:test[index+1], currentPhoto:test[index], switch:true, something: false, rightCounter: rightCounter})
-                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.leftCounter === 0 || this.state.leftCounter === 2)) {
+                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.leftCounter === 0)) {
 
                       let rightCounter
                       if(this.state.rightCounter === 0) {rightCounter = 1}
                       else if(this.state.rightCounter === 1) {rightCounter = 2}
+                      else if(this.state.rightCounter === 2) {rightCounter = 2}
 
                       if (!this.state.something) {
                         console.log('a1')
@@ -229,11 +308,26 @@ class Services extends Component {
                         console.log('a1')
                         this.setState({backgroundPhoto: test[index+2], currentPhoto:test[index+1], something: false, rightCounter: rightCounter})
                       }
+                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.leftCounter === 2)) {
+
+                      let rightCounter
+                      if(this.state.rightCounter === 0) {rightCounter = 1}
+                      else if(this.state.rightCounter === 1) {rightCounter = 2}
+                      else if(this.state.rightCounter === 2) {rightCounter = 2}
+
+                      if (!this.state.something) {
+                        console.log('a1')
+                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+2], something: true, rightCounter:rightCounter, leftCounter:0})
+                      } else if (this.state.something){
+                        console.log('a1')
+                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+2], something: false, rightCounter: rightCounter, leftCounter:0})
+                      }
                   } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.leftCounter === 1)) {
 
                       let rightCounter
                       if(this.state.rightCounter === 0) {rightCounter = 1}
                       else if(this.state.rightCounter === 1) {rightCounter = 2}
+                      else if(this.state.rightCounter === 2) {rightCounter = 2}
 
                       if (!this.state.something) {
                         console.log('a1')
@@ -246,11 +340,12 @@ class Services extends Component {
 
 
 
-                  else if ((index !== 0) && (index !== 2) && (this.state.leftCounter === 0 || this.state.leftCounter === 2)) {
+                  else if ((index !== 0) && (index !== 2) && (this.state.leftCounter === 0)) {
 
                       let rightCounter
                       if(this.state.rightCounter === 0) {rightCounter = 1}
                       else if(this.state.rightCounter === 1) {rightCounter = 2}
+                      else if(this.state.rightCounter === 2) {rightCounter = 2}
 
                       if(index%2 !== 0) {
                         if(!this.state.something) {
@@ -269,11 +364,36 @@ class Services extends Component {
                           this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: false, rightCounter:rightCounter})
                         }
                       }
+                  } else if ((index !== 0) && (index !== 2) && (this.state.leftCounter === 2)) {
+
+                      let rightCounter
+                      if(this.state.rightCounter === 0) {rightCounter = 1}
+                      else if(this.state.rightCounter === 1) {rightCounter = 2}
+                      else if(this.state.rightCounter === 2) {rightCounter = 2}
+
+                      if(index%2 !== 0) {
+                        if(!this.state.something) {
+                          console.log('r1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: true, rightCounter:rightCounter, leftCounter:0})
+                        } else if (this.state.something) {
+                          console.log('r1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: false, rightCounter:rightCounter, leftCounter:0})
+                        }
+                      } else if (index%2 === 0) {
+                        if(!this.state.something) {
+                          console.log('e1')
+                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: true, rightCounter:rightCounter})
+                        } else if (this.state.something) {
+                          console.log('e1')
+                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: false, rightCounter:rightCounter})
+                        }
+                      }
                   } else if ((index !== 0) && (index !== 2) && (this.state.leftCounter === 1)) {
 
                       let rightCounter
                       if(this.state.rightCounter === 0) {rightCounter = 1}
                       else if(this.state.rightCounter === 1) {rightCounter = 2}
+                      else if(this.state.rightCounter === 2) {rightCounter = 2}
 
                       if(index%2 !== 0) {
                         if(!this.state.something) {
@@ -300,6 +420,7 @@ class Services extends Component {
                       let rightCounter
                       if(this.state.rightCounter === 0) {rightCounter = 1}
                       else if(this.state.rightCounter === 1) {rightCounter = 2}
+                      else if(this.state.rightCounter === 2) {rightCounter = 2}
 
                       if(test.length%2 !== 0) {
                         if(!this.state.something) {
@@ -319,11 +440,12 @@ class Services extends Component {
                         }
 
                       }
-                  } else if ((index === 2) && (this.state.leftCounter === 0 || this.state.leftCounter === 2)) {
+                  } else if ((index === 2) && (this.state.leftCounter === 0)) {
 
                       let rightCounter
                       if(this.state.rightCounter === 0) {rightCounter = 1}
                       else if(this.state.rightCounter === 1) {rightCounter = 2}
+                      else if(this.state.rightCounter === 2) {rightCounter = 2}
 
                       if(test.length%2 !== 0) {
                         if(!this.state.something) {
@@ -340,6 +462,31 @@ class Services extends Component {
                         } else if (this.state.something) {
                           console.log('g1')
                           this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: false, rightCounter:rightCounter})
+                        }
+
+                      }
+                  } else if ((index === 2) && (this.state.leftCounter === 2)) {
+
+                      let rightCounter
+                      if(this.state.rightCounter === 0) {rightCounter = 1}
+                      else if(this.state.rightCounter === 1) {rightCounter = 2}
+                      else if(this.state.rightCounter === 2) {rightCounter = 2}
+
+                      if(test.length%2 !== 0) {
+                        if(!this.state.something) {
+                          console.log('n1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: true, rightCounter:rightCounter, leftCounter:0})
+                        } else if(this.state.something) {
+                          console.log('n1')
+                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: false, rightCounter:rightCounter, leftCounter:0})
+                        }
+                      }  else if(test.length%2 === 0) {
+                        if(!this.state.something) {
+                          console.log('g1')
+                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: true, rightCounter:rightCounter, leftCounter:0})
+                        } else if (this.state.something) {
+                          console.log('g1')
+                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: false, rightCounter:rightCounter, leftCounter:0})
                         }
 
                       }
