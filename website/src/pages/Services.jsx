@@ -7,6 +7,7 @@ import installing from '../images/Installation.png';
 import repairing from '../images/repair.jpg';
 import finishing from '../images/finishing.jpg';
 import ServiceSelection from '../functions/ServiceSelection';
+import LeftArrow from '../functions/LeftArrow'
 //import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Services extends Component {
@@ -18,8 +19,8 @@ class Services extends Component {
       currentPhoto: installing,
       backgroundPhoto: installing,
       switch:false,
-      something: false,
       forwards: false,
+      something: false,
       leftCounter:0,
       rightCounter:0
     }
@@ -50,6 +51,10 @@ class Services extends Component {
     return rightCounter
   }
 
+  boundThis(){
+    return this
+  }
+
   render(){
     return(
       <div>
@@ -78,316 +83,100 @@ class Services extends Component {
 
             <div className='leftArrow' onClick={()=>{
               this.setState({forwards:false})
-              this.state.photoArray.map((item, index)=>{
-                let test = this.state.photoArray.slice()
-                console.log(this.state.rightCounter)
-                console.log(this.state.leftCounter)
-                if(item === this.state.currentPhoto) {
-                  if ((index === 0) && (this.state.backgroundPhoto === installing) && (!this.state.switch)){
-                    console.log('k1')
-                    this.setState({backgroundPhoto:test[index+2], currentPhoto:test[index], switch:true, something: false, leftCounter: this.leftCounter()})
-                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.rightCounter === 0)) {
-                      if (!this.state.something) {
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index+2], something: true, leftCounter:this.leftCounter()})
-                      } else if (this.state.something){
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index+2], something: false, leftCounter:this.leftCounter()})
-                      }
-                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.rightCounter === 2)) {
-                      if (!this.state.something) {
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: true, leftCounter:this.leftCounter(), rightCounter:0})
-                      } else if (this.state.something){
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: false, leftCounter:this.leftCounter(), rightCounter:0})
-                      }
-                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.rightCounter === 1)) {
-                      if (!this.state.something) {
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: true, leftCounter:this.leftCounter(), rightCounter: 0})
-                      } else if (this.state.something){
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: false, leftCounter:this.leftCounter(), rightCounter: 0})
-                      }
-                  }
-
-
-
-                  else if ((index !== 0) && (index!==1) && (this.state.rightCounter === 0)) {
-                      if(index%2 !==0) {
-                        if(!this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: true, leftCounter: this.leftCounter()})
-                        } else if (this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: false, leftCounter: this.leftCounter()})
-                        }
-                      } else if (index%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: true, leftCounter: this.leftCounter()})
-                        } else if (this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index-2], currentPhoto:test[index-1], something: false, leftCounter: this.leftCounter()})
-                        }
-                      }
-                  } else if ((index !== 0) && (index!==1) && (this.state.rightCounter === 2)) {
-                      if(index%2 !==0) {
-                        if(!this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: true, leftCounter: this.leftCounter(), rightCounter:0})
-                        } else if (this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: false, leftCounter: this.leftCounter(), rightCounter:0})
-                        }
-                      } else if (index%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: true, leftCounter: this.leftCounter(), rightCounter:0})
-                        } else if (this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: false, leftCounter: this.leftCounter(), rightCounter:0})
-                        }
-                      }
-                  } else if ((index !== 0) && (index!==1) && (this.state.rightCounter === 1)) {
-                      if(index%2 !==0) {
-                        if(!this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: true, leftCounter: this.leftCounter(), rightCounter: 0})
-                        } else if (this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: false, leftCounter: this.leftCounter(), rightCounter: 0})
-                        }
-                      } else if (index%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: true, leftCounter: this.leftCounter(), rightCounter: 0})
-                        } else if (this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-2], something: false, leftCounter: this.leftCounter(), rightCounter: 0})
-                        }
-                      }
-                  }
-
-
-
-                  else if ((index === 1) && (this.state.rightCounter === 0)) {
-                      if(test.length%2 !== 0) {
-                        if(!this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: true, leftCounter:this.leftCounter()})
-                        } else if(this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: false, leftCounter:this.leftCounter()})
-                        }
-                      }  else if(test.length%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: true, leftCounter:lthis.leftCounter()})
-                        } else if (this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index+1], currentPhoto:test[index-1], something: false, leftCounter:this.leftCounter()})
-                        }
-
-                      }
-                  } else if ((index === 1) && (this.state.rightCounter === 2)) {
-                      if(test.length%2 !== 0) {
-                        if(!this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: true, leftCounter:this.leftCounter(), rightCounter:0})
-                        } else if(this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: false, leftCounter:this.leftCounter(), rightCounter:0})
-                        }
-                      }  else if(test.length%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: true, leftCounter:lthis.leftCounter(), rightCounter:0})
-                        } else if (this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: false, leftCounter:this.leftCounter(), rightCounter:0})
-                        }
-
-                      }
-                  } else if ((index === 1) && (this.state.rightCounter === 1)) {
-                      if(test.length%2 !== 0) {
-                        if(!this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: true, leftCounter:this.leftCounter(), rightCounter:0})
-                        } else if(this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: false, leftCounter:this.leftCounter(), rightCounter:0})
-                        }
-                      }  else if(test.length%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: true, leftCounter:this.leftCounter(), rightCounter:0})
-                        } else if (this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index+1], something: false, leftCounter:this.leftCounter(), rightCounter:0})
-                        }
-
-                      }
-                  }
-
-                }
-                return null
-              })
+              console.log(this.state.leftCounter)
+              console.log(this.state.rightCounter)
+              LeftArrow().leftClick(this.boundThis.bind(this), installing)
             }}> <Glyphicon glyph='chevron-left'/></div>
             <div className='rightArrow' onClick={()=>{
               this.setState({forwards:true})
+              console.log(this.state.leftCounter)
+              console.log(this.state.rightCounter)
               this.state.photoArray.map((item, index)=>{
                 let test = this.state.photoArray.slice()
-                console.log(this.state.rightCounter)
-                console.log(this.state.leftCounter)
-
                 if(item === this.state.currentPhoto) {
                   if ((index === 0) && (this.state.backgroundPhoto === installing) && (!this.state.switch)){
                     console.log('k1')
                     this.setState({backgroundPhoto:test[index+1], currentPhoto:test[index], switch:true, something: false, rightCounter: this.rightCounter()})
-                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.leftCounter === 0)) {
-                      if (!this.state.something) {
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index+2], currentPhoto:test[index+1], something: true, rightCounter: this.rightCounter()})
-                      } else if (this.state.something){
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index+2], currentPhoto:test[index+1], something: false, rightCounter: this.rightCounter()})
+                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing)) {
+                      switch(this.state.leftCounter) {
+                        case 0:
+                            if (!this.state.something) {
+                              console.log('a1')
+                              this.setState({backgroundPhoto: test[index+2], currentPhoto:test[index+1], something: true, rightCounter: this.rightCounter()})
+                            } else if (this.state.something){
+                              console.log('a1')
+                              this.setState({backgroundPhoto: test[index+2], currentPhoto:test[index+1], something: false, rightCounter: this.rightCounter()})
+                            }
+                            break
+                        case 1:
+                        case 2:
+                            if (!this.state.something) {
+                              console.log('a1')
+                              this.setState({backgroundPhoto: test[index], currentPhoto:test[index+2], something: true, rightCounter: this.rightCounter(), leftCounter:0})
+                            } else if (this.state.something){
+                              console.log('a1')
+                              this.setState({backgroundPhoto: test[index], currentPhoto:test[index+2], something: false, rightCounter: this.rightCounter(), leftCounter:0})
+                            }
+                            break
+                        default:
+                            console.log(this.state.leftCounter)
                       }
-                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.leftCounter === 2)) {
-                      if (!this.state.something) {
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+2], something: true, rightCounter: this.rightCounter(), leftCounter:0})
-                      } else if (this.state.something){
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+2], something: false, rightCounter: this.rightCounter(), leftCounter:0})
-                      }
-                  } else if ((index === 0) && (this.state.backgroundPhoto !== installing) && (this.state.leftCounter === 1)) {
-                      if (!this.state.something) {
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+2], something: true, rightCounter: this.rightCounter(), leftCounter:0})
-                      } else if (this.state.something){
-                        console.log('a1')
-                        this.setState({backgroundPhoto: test[index], currentPhoto:test[index+2], something: false, rightCounter: this.rightCounter(), leftCounter:0})
-                      }
-                  }
-
-
-
-                  else if ((index !== 0) && (index !== 2) && (this.state.leftCounter === 0)) {
-                      if(index%2 !== 0) {
-                        if(!this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: true, rightCounter: this.rightCounter()})
-                        } else if (this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: false, rightCounter: this.rightCounter()})
-                        }
-                      } else if (index%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: true, rightCounter: this.rightCounter()})
-                        } else if (this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: false, rightCounter: this.rightCounter()})
-                        }
-                      }
-                  } else if ((index !== 0) && (index !== 2) && (this.state.leftCounter === 2)) {
-                      if(index%2 !== 0) {
-                        if(!this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: true, rightCounter:this.rightCounter(), leftCounter:0})
-                        } else if (this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: false, rightCounter:this.rightCounter(), leftCounter:0})
-                        }
-                      } else if (index%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: true, rightCounter:this.rightCounter()})
-                        } else if (this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: false, rightCounter:this.rightCounter()})
-                        }
-                      }
-                  } else if ((index !== 0) && (index !== 2) && (this.state.leftCounter === 1)) {
-                      if(index%2 !== 0) {
-                        if(!this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: true, rightCounter:this.rightCounter(), leftCounter:0})
-                        } else if (this.state.something) {
-                          console.log('r1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: false, rightCounter:this.rightCounter(), leftCounter:0})
-                        }
-                      } else if (index%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: true})
-                        } else if (this.state.something) {
-                          console.log('e1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: false})
-                        }
-                      }
-                  }
-
-
-                  else if ((index === 2) && (this.state.leftCounter === 1)) {
-                      if(test.length%2 !== 0) {
-                        if(!this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: true, rightCounter:this.rightCounter(), leftCounter:0})
-                        } else if(this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: false, rightCounter:this.rightCounter(), leftCounter:0})
-                        }
-                      }  else if(test.length%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: true, rightCounter:this.rightCounter(), leftCounter:0})
-                        } else if (this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: false, rightCounter:this.rightCounter(), leftCounter:0})
-                        }
-
-                      }
-                  } else if ((index === 2) && (this.state.leftCounter === 0)) {
-                      if(test.length%2 !== 0) {
-                        if(!this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: true, rightCounter:this.rightCounter()})
-                        } else if(this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: false, rightCounter:this.rightCounter()})
-                        }
-                      }  else if(test.length%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: true, rightCounter:this.rightCounter()})
-                        } else if (this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: false, rightCounter:this.rightCounter()})
-                        }
-
-                      }
-                  } else if ((index === 2) && (this.state.leftCounter === 2)) {
-                      if(test.length%2 !== 0) {
-                        if(!this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: true, rightCounter:this.rightCounter(), leftCounter:0})
-                        } else if(this.state.something) {
-                          console.log('n1')
-                          this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: false, rightCounter:this.rightCounter(), leftCounter:0})
-                        }
-                      }  else if(test.length%2 === 0) {
-                        if(!this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: true, rightCounter:this.rightCounter(), leftCounter:0})
-                        } else if (this.state.something) {
-                          console.log('g1')
-                          this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: false, rightCounter:this.rightCounter(), leftCounter:0})
-                        }
-
-                      }
+                  } else if (index === 1) {
+                    switch(this.state.leftCounter) {
+                      case 0:
+                          if(!this.state.something) {
+                            console.log('r1')
+                            this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: true, rightCounter: this.rightCounter()})
+                          } else if (this.state.something) {
+                            console.log('r1')
+                            this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index+1], something: false, rightCounter: this.rightCounter()})
+                          }
+                          break
+                      case 1:
+                      case 2:
+                          if(!this.state.something) {
+                            console.log('r1')
+                            this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: true, rightCounter:this.rightCounter(), leftCounter:0})
+                          } else if (this.state.something) {
+                            console.log('r1')
+                            this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: false, rightCounter:this.rightCounter(), leftCounter:0})
+                          }
+                          break
+                      default:
+                          console.log(this.state.leftCounter)
+                    }
+                  } else if (index === 2) {
+                    switch(this.state.leftCounter) {
+                      case 0:
+                          if(!this.state.something) {
+                            console.log('n1')
+                            this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: true, rightCounter:this.rightCounter()})
+                          } else if(this.state.something) {
+                            console.log('n1')
+                            this.setState({backgroundPhoto: test[index-1], currentPhoto:test[index-2], something: false, rightCounter:this.rightCounter()})
+                          }
+                          break
+                      case 1:
+                          if(!this.state.something) {
+                            console.log('n1')
+                            this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: true, rightCounter:this.rightCounter(), leftCounter:0})
+                          } else if(this.state.something) {
+                            console.log('n1')
+                            this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: false, rightCounter:this.rightCounter(), leftCounter:0})
+                          }
+                          break
+                      case 2:
+                          if(!this.state.something) {
+                            console.log('n1')
+                            this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: true, rightCounter:this.rightCounter(), leftCounter:0})
+                          } else if(this.state.something) {
+                            console.log('n1')
+                            this.setState({backgroundPhoto: test[index], currentPhoto:test[index-1], something: false, rightCounter:this.rightCounter(), leftCounter:0})
+                          }
+                          break
+                      default:
+                          console.log(this.state.leftCounter)
+                    }
                   }
                 }
                 return null
