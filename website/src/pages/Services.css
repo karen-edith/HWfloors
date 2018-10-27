@@ -122,25 +122,47 @@
 }
 
 .lefttransx{
-  animation: leftmove 2s;
+  animation: leftmove 5s;
   animation-fill-mode: forwards;
 }
 
 .lefttransition{
-  animation: leftmove 2s;
+  animation: leftmove 5s;
   animation-fill-mode: forwards;
 }
 
 .righttransx{
-  animation: rightmove 2s;
+  animation: rightmove 5s;
   animation-fill-mode: forwards;
 }
 
 .righttransition{
-  animation: rightmove 2s;
+  animation: rightmove 5s;
   animation-fill-mode: forwards;
 }
 
 .hide{
   visibility: hidden;
+}
+
+.servicesDescriptionContainer{
+  width:98%;
+  height: 220px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.backgroundDescription{
+  width:100%;
+  height:220px;
+  position: absolute;
+  top:0;
+}
+
+.frontDescription{
+  width:100%;
+  height:220px;
+  position:absolute;
+  top:0;
+  background-color: white;
 }

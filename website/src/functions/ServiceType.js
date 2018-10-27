@@ -5,8 +5,8 @@ var ServiceType = function() {
   return {
     installing: function() {
       return(
-        <Grid className='servicesGrid' fluid>
-        <Row className='servicesRow'>
+        <Grid className='serviceGrid' fluid>
+          <Row className='servicesRow'>
           <Col className='servicesCol' xs={5} sm={5} md={5} lg={5} xl={5}>
             <div className='servicesColTitle'> Hardwood Floor Installation</div>
             <div className='servicesColLine'> </div>
@@ -26,7 +26,7 @@ var ServiceType = function() {
               We have many years of experience and can install on just about all sub-flooring surfaces
             </div>
           </Col>
-        </Row>
+          </Row>
         </Grid>
       )
     },

@@ -60,7 +60,45 @@ class Services extends Component {
     return(
       <div>
         <NavBar />
-        {ServiceSelection().selectType(this.state.currentPhoto, installing, finishing, repairing)}
+        {
+          this.state.forwards ?
+          (
+            <div>
+              <div className={this.state.something ? 'hide' : 'servicesDescriptionContainer'}>
+                <div className='backgroundDescription'>{ServiceSelection().selectType(this.state.backgroundPhoto, installing, finishing, repairing)}</div>
+                <div className ={!this.state.switch ?  'frontDescription' : (this.state.something ? 'frontDescription righttransx' : 'frontDescription righttransition')}>
+                  <div className='backgroundDescription'> {ServiceSelection().selectType(this.state.currentPhoto, installing, finishing, repairing)}</div>
+                </div>
+              </div>
+
+              <div className={this.state.something ? 'servicesDescriptionContainer': 'hide'}>
+                <div className='backgroundDescription'>{ServiceSelection().selectType(this.state.backgroundPhoto, installing, finishing, repairing)}</div>
+                <div className ={!this.state.switch ?  'frontDescription' : (this.state.something ? 'frontDescription righttransx' : 'frontDescription righttransition')}>
+                  <div className='backgroundDescription'> {ServiceSelection().selectType(this.state.currentPhoto, installing, finishing, repairing)}</div>
+                </div>
+              </div>
+            </div>
+
+          )
+          :
+          (
+            <div>
+              <div className={this.state.something ? 'hide' : 'servicesDescriptionContainer'}>
+                <div className='backgroundDescription'>{ServiceSelection().selectType(this.state.backgroundPhoto, installing, finishing, repairing)}</div>
+                <div className ={!this.state.switch ?  'frontDescription' : (this.state.something ? 'frontDescription lefttransx' : 'frontDescription lefttransition')}>
+                  <div className='backgroundDescription'> {ServiceSelection().selectType(this.state.currentPhoto, installing, finishing, repairing)}</div>
+                </div>
+              </div>
+              <div className={this.state.something ? 'servicesDescriptionContainer' : 'hide'}>
+                <div className='backgroundDescription'>{ServiceSelection().selectType(this.state.backgroundPhoto, installing, finishing, repairing)}</div>
+                <div className ={!this.state.switch ?  'frontDescription' : (this.state.something ? 'frontDescription lefttransx' : 'frontDescription lefttransition')}>
+                  <div className='backgroundDescription'> {ServiceSelection().selectType(this.state.currentPhoto, installing, finishing, repairing)}</div>
+                </div>
+              </div>
+            </div>
+        )
+        }
+
         <Grid className='pictureGrid' fluid>
           <Row style={this.backgroundStyles()} className='pictureRowCenter'>
             {
