@@ -11,7 +11,8 @@ class Contact extends Component {
     this.state={
       email:'',
       phone:'',
-      name:''
+      name:'',
+      message:''
     }
   }
 
@@ -32,6 +33,7 @@ class Contact extends Component {
                       type='text'
                       value = {this.state.name}
                       placeholder = 'Full Name'
+                      onChange={(event)=>this.setState({name: event.target.value})}
                     />
                   </InputGroup>
                   <InputGroup className='finput'>
@@ -40,6 +42,7 @@ class Contact extends Component {
                       type='text'
                       value = {this.state.email}
                       placeholder = 'Email Address'
+                      onChange={(event)=>this.setState({email:event.target.value})}
                     />
                   </InputGroup>
                   <InputGroup className='finput'>
@@ -48,13 +51,16 @@ class Contact extends Component {
                       type='text'
                       value = {this.state.phone}
                       placeholder = 'Phone Number'
+                      onChange={(event)=>this.setState({phone:event.target.value})}
                     />
                   </InputGroup>
                 </FormGroup>
                 <FormControl
                   componentClass='textarea'
                   placeholder='Your Messsage'
+                  value = {this.state.message}
                   className='finput'
+                  onChange={(event)=>this.setState({message:event.target.value})}
                 />
               </form>
             </Col>
