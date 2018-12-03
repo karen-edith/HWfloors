@@ -33,7 +33,9 @@
 }
 
 @media screen and (max-width:767px) {
+
   .logo{
+    /*margin-left: 42%;*/
     font-size: 1.5vw;
   }
 }
@@ -57,6 +59,7 @@
 .licnbitem{
   border: 2px solid #51575C;
   border-radius: 3px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width:767px) {
