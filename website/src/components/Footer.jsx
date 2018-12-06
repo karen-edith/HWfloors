@@ -10,16 +10,16 @@ class Footer extends Component{
         <Grid className='footer-grid'>
           <Row className='footer-grid-row'>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
-              <div className='footer-item'> GET A QUOTE </div>
-              <div className='footer-item'> hwfloors@gmail.com </div>
+              <div className='footer-item'> <div className="underline"> GET A QUOTE </div></div>
+              <div className='footer-item bottom'>  hwfloors@gmail.com </div>
             </Col>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
-              <div className='footer-item'> SAY HELLO </div>
-              <div className='footer-item'> (323) 123-4567 </div>
+              <div className='footer-item'> <div className="underline"> SAY HELLO </div></div>
+              <div className='footer-item bottom'> (323) 123-4567 </div>
             </Col>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
-              <div className='footer-item'> JOBS </div>
-              <div className='footer-item'> jobshwfloors@gmail.com </div>
+              <div className='footer-item'> <div className="underline"> JOBS </div></div>
+              <div className='footer-item bottom'> jobshwfloors@gmail.com </div>
             </Col>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
               <div className='footer-icon'> <Image className='footer-icon-img' responsive src={require('../icons/instagram.png')}/></div>
