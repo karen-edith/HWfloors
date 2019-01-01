@@ -24,15 +24,15 @@ class Footer extends Component{
           <Row className='footer-grid-row'>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
               <div className='footer-item'> <div className="underline"> GET A QUOTE </div></div>
-              <div className='footer-item bottom'>  hwfloors@gmail.com </div>
+              <div className='footer-item bottom'> <a className="email" href="mailto:ehardwoodfloors@gmail.com"> ehardwoodfloors@gmail.com </a> </div>
             </Col>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
               <div className='footer-item'> <div className="underline"> SAY HELLO </div></div>
               <div className='footer-item bottom'> (323) 123-4567 </div>
             </Col>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
-              <div className='footer-item'> <div className="underline"> Career Opportunities </div></div>
-              <div className='footer-item bottom'> jobshwfloors@gmail.com </div>
+              <div className='footer-item'> <div className="underline"> CAREER OPPORTUNITIES </div></div>
+              <div className='footer-item bottom'> <a className="email" href="mailto:careersehwfloors@gmail.com"> careersehwfloors@gmail.com </a> </div>
             </Col>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
               <div className='footer-icon'> <Image className='footer-icon-img' responsive src={require('../icons/instagram.png')} onClick = {() => {this.instagram()}}/></div>
