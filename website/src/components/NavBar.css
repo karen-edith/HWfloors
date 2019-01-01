@@ -36,7 +36,19 @@
 
   .logo{
     /*margin-left: 42%;*/
-    font-size: 2.5vw;
+    font-size: calc(0.5vw + 10px);
+  }
+  /* center logo title when navbar collapses*/
+  .navbar-header {
+    float:none;
+    padding: 15px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .navbar-brand {
+    float: none;
+    text-align: center;
   }
 }
 
@@ -49,7 +61,7 @@
 @media screen and (max-width:767px) {
   .nbitem{
     border-bottom: 1px solid #F0EDED;
-    font-size: 2.5vw;
+    font-size: calc(0.5vw + 8px);
   }
   .nbitemtop{
     border-top: 1px solid #F0EDED;
@@ -64,7 +76,21 @@
 
 @media screen and (max-width:767px) {
   .licnbitem{
+    width:19%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:460px) {
+  .licnbitem{
     width:25%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:220px) {
+  .licnbitem{
+    width:40%;
     text-align: center;
   }
 }
