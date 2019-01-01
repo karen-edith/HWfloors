@@ -30,7 +30,7 @@ class NavBar extends Component{
         <div className='navbarContainer'>
           <Navbar fluid className='navigationbar'>
             <Navbar.Header className='header-brand'>
-              <Navbar.Brand className='logo'> Hardwood Floors </Navbar.Brand>
+              <Navbar.Brand className='logo'> Eternity Hardwood Floors </Navbar.Brand>
             </Navbar.Header>
             <Nav pullRight>
               <NavItem className='nbitem nbitemtop' onClick={()=>{this.home()}}> HOME </NavItem>

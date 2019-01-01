@@ -36,7 +36,7 @@
 
   .logo{
     /*margin-left: 42%;*/
-    font-size: 1.5vw;
+    font-size: 2.5vw;
   }
 }
 
@@ -49,7 +49,7 @@
 @media screen and (max-width:767px) {
   .nbitem{
     border-bottom: 1px solid #F0EDED;
-    font-size: 1.5vw;
+    font-size: 2.5vw;
   }
   .nbitemtop{
     border-top: 1px solid #F0EDED;
@@ -64,7 +64,7 @@
 
 @media screen and (max-width:767px) {
   .licnbitem{
-    width:15%;
+    width:25%;
     text-align: center;
   }
 }

@@ -1,8 +1,21 @@
 import React, {Component} from 'react';
-import {Grid, Row, Col, Image} from 'react-bootstrap'
+import {Grid, Row, Col, Image, Glyphicon} from 'react-bootstrap'
 import './Footer.css';
 
 class Footer extends Component{
+
+  instagram(){
+    window.location.href = 'http://www.instagram.com'
+  }
+
+  facebook(){
+    window.location.href = 'http://www.facebook.com'
+  }
+
+  twitter(){
+    window.location.href = 'http://www.twitter.com'
+  }
+
   render(){
     return (
       <div>
@@ -18,13 +31,16 @@ class Footer extends Component{
               <div className='footer-item bottom'> (323) 123-4567 </div>
             </Col>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
-              <div className='footer-item'> <div className="underline"> JOBS </div></div>
+              <div className='footer-item'> <div className="underline"> Career Opportunities </div></div>
               <div className='footer-item bottom'> jobshwfloors@gmail.com </div>
             </Col>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
-              <div className='footer-icon'> <Image className='footer-icon-img' responsive src={require('../icons/instagram.png')}/></div>
-              <div className='footer-icon'> <Image className='footer-icon-img' responsive src={require('../icons/twitter.png')}/></div>
-              <div className='footer-icon'> <Image className='footer-icon-img' responsive src={require('../icons/facebook.png')}/></div>
+              <div className='footer-icon'> <Image className='footer-icon-img' responsive src={require('../icons/instagram.png')} onClick = {() => {this.instagram()}}/></div>
+              <div className='footer-icon'> <Image className='footer-icon-img' responsive src={require('../icons/twitter.png')} onClick = {() => {this.twitter()}}/></div>
+              <div className='footer-icon'> <Image className='footer-icon-img' responsive src={require('../icons/facebook.png')} onClick ={() => {this.facebook()}}/></div>
+            </Col>
+            <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
+              <div className='copyright'> <Glyphicon glyph='copyright-mark'/> 2019 Eternity Hardwood Floors All Rights Reserved</div>
             </Col>
           </Row>
         </Grid>
