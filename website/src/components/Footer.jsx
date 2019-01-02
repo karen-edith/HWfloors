@@ -37,7 +37,7 @@ class Footer extends Component{
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
               <div className='footer-icon'> <Image className='footer-icon-img' responsive src={require('../icons/instagram.png')} onClick = {() => {this.instagram()}}/></div>
               <div className='footer-icon'> <Image className='footer-icon-img' responsive src={require('../icons/twitter.png')} onClick = {() => {this.twitter()}}/></div>
-              <div className='footer-icon'> <Image className='footer-icon-img' responsive src={require('../icons/facebook.png')} onClick ={() => {this.facebook()}}/></div>
+              <div className='footer-icon'> <Image className='footer-icon-img-fbook' responsive src={require('../icons/facebook.png')} onClick ={() => {this.facebook()}}/></div>
             </Col>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
               <div className='copyright'> <Glyphicon glyph='copyright-mark'/> 2019 Eternity Hardwood Floors All Rights Reserved</div>

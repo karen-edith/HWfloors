@@ -55,8 +55,21 @@
 .nbitem{
   font-size: calc(0.5vw + 5.0px);
   /*border: 1px solid blue;*/
-  cursor: pointer;
+  /*cursor: pointer*/
 }
+
+.nav>li>a:hover {
+  cursor: default;
+}
+
+.textwidth{
+  font-weight: normal;
+}
+
+.textwidth:hover{
+  font-weight: bold;
+}
+
 
 @media screen and (max-width:767px) {
   .nbitem{

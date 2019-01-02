@@ -33,11 +33,11 @@ class NavBar extends Component{
               <Navbar.Brand className='logo'> Eternity Hardwood Floors </Navbar.Brand>
             </Navbar.Header>
             <Nav pullRight>
-              <NavItem className='nbitem nbitemtop' onClick={()=>{this.home()}}> HOME </NavItem>
-              <NavItem className='nbitem' onClick={()=>{this.aboutus()}}>  ABOUT US </NavItem>
-              <NavItem className='nbitem' onClick={()=>{this.services()}}> SERVICES </NavItem>
-              <NavItem className='nbitem' onClick={()=>{this.portfolio()}}> PORTFOLIO </NavItem>
-              <NavItem className='nbitem' onClick={()=>{this.contact()}}> CONTACT US </NavItem>
+              <NavItem className='nbitem textwidth nbitemtop' onClick={()=>{this.home()}}> HOME </NavItem>
+              <NavItem className='nbitem textwidth' onClick={()=>{this.aboutus()}}>  ABOUT US </NavItem>
+              <NavItem className='nbitem textwidth' onClick={()=>{this.services()}}> SERVICES </NavItem>
+              <NavItem className='nbitem textwidth' onClick={()=>{this.portfolio()}}> PORTFOLIO </NavItem>
+              <NavItem className='nbitem textwidth' onClick={()=>{this.contact()}}> CONTACT US </NavItem>
               <NavItem className='nbitem'> <div className='licnbitem'> <div className='lcinner'> LIC # 345678 </div> </div> </NavItem>
             </Nav>
           </Navbar>

@@ -50,8 +50,10 @@
 }
 
 .email:hover {
-  color: #E3E0E0;
+  font-weight: bold;
+  color: black;
   text-decoration: none;
+  cursor: default;
 }
 
 .footer-icon{
@@ -61,9 +63,21 @@
   padding: 5px;
 }
 
-.footer-icon-img{
+.footer-icon-img, .footer-icon-img-fbook{
   margin: 0 auto;
 }
+
+.footer-icon-img:hover{
+  cursor: default;
+  width: 11px;
+  height: 11px;
+}
+
+.footer-icon-img-fbook:hover{
+  width: 6px;
+  height: 10px;
+}
+
 
 .copyright{
   color: #808080;
