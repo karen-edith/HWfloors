@@ -9,10 +9,11 @@ class AboutUs extends Component {
     return(
       <div>
         <NavBar/>
-        <Grid className='aboutusgrid' fluid>
+        <div className = 'griddiv'>
+          <Grid className='aboutusgrid' fluid>
           <Row className = 'aboutusrow'>
-            <Col className='aboutuscol1 vcenter' xs={12} sm={7} md={7} lg={7} xl={7}> <Image className= "losAngeles" src={require('../images/city.png')} responsive/></Col>
-            <Col className='aboutuscol2 vcenter' xs={12} sm={5} md={5} lg={5} xl={5}>
+            <Col className='aboutuscol1 vcenter' xs={12} sm={12} md={7} lg={7} xl={7}> <Image className= "losAngeles" src={require('../images/city.png')} responsive/></Col>
+            <Col className='aboutuscol2 vcenter' xs={12} sm={12} md={5} lg={5} xl={5}>
               <div className='aboutustitle'> Who We Are </div>
               <div className='aboutuspar'>
                 <p>
@@ -47,7 +48,9 @@ class AboutUs extends Component {
               </div>
             </Col>
           </Row>
-        </Grid>
+          </Grid>
+        </div>
+
         <Footer/>
       </div>
 
