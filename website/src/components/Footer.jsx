@@ -23,7 +23,7 @@ class Footer extends Component{
         <Grid className='footer-grid'>
           <Row className='footer-grid-row'>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>
-              <div className='footer-item'> <div className="underline"> GET A QUOTE </div></div>
+              <div className='footer-item top'> <div className="underline"> GET A QUOTE </div></div>
               <div className='footer-item bottom'> <a className="email" href="mailto:ehardwoodfloors@gmail.com"> ehardwoodfloors@gmail.com </a> </div>
             </Col>
             <Col className='footer-grid-col' xs={3} sm={3} md={3} lg={3} xl={3}>

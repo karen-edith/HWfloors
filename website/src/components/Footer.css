@@ -12,17 +12,19 @@
   margin-top:20px;
   margin-bottom: 20px;
   font-family: Hiragino Mincho ProN;
+  /*border: 1px solid yellow;*/
 }
 
 .footer-grid-row{
   margin: 0 auto;
+  /*border: 1px solid blue;*/
 }
 
 .footer-grid-col{
   padding: 0px;
   margin: 0px;
   text-align: center;
-  font-size: 1.1vw;
+  font-size: calc(0.5vw + 5px);
   padding: 5px;
 }
 
@@ -67,7 +69,60 @@
   color: #808080;
   text-align: center;
   margin: 0 auto;
-  font-size: 0.7vw;
+  font-size: calc(0.5vw + 2.0px);
   font-weight: lighter;
   vertical-align: bottom;
+}
+
+@media screen and (max-width:767px) {
+
+  .top-border, .bottom-border{
+    border: 3px solid #E3E0E0;
+    width: 98%;
+    margin: 0 auto;
+    height:7px;
+    margin-bottom: 10px;
+  }
+
+  .footer-grid-col{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    font-size: calc(0.5vw + 7px);
+    padding: 5px;
+    width: 100%;
+  }
+
+
+  .underline{
+    margin: 0 auto;
+    border-bottom: 2px solid #E3E0E0;
+    width: 100%;
+    padding: 2px;
+    padding-bottom: 5px;
+  }
+
+  .footer-item{
+    width: 100%;
+    border-right: none;
+  }
+
+  .bottom{
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+
+  .copyright{
+    color: #808080;
+    text-align: center;
+    margin: 0 auto;
+    font-size: calc(0.5vw + 4.0px);
+    font-weight: lighter;
+    vertical-align: bottom;
+    margin-top: 10px;
+  }
+
+  .top {
+    margin-top: 7px;
+  }
 }
