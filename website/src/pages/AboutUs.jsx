@@ -17,32 +17,30 @@ class AboutUs extends Component {
               <div className='aboutustitle'> Who We Are </div>
               <div className='aboutuspar'>
                 <p>
-                  Pacific Hardwood Flooring was established in 1990, from a
-                  two man company to what it is now. Our objectives are quality
-                  and creativity explored by our company, which enables us to
-                  work with many homeowners anywhere from a small home to an
-                  $70 million home. Our precision and  quality of work connects
-                  us to large developers such as Hopkin’s Construction, joining
-                  us and them with their projects from large homes to high end
-                  condos. In addition to this, Penta Resources brings Pacific
-                  Hardwood Flooring to many of Penta’s big projects like
-                  Bloomingdale’s, many branches of Abercrombie Fitch, Glendale
-                  and Burbank school districts, stage auditorium and civic center.
+                  Eternity Hardwood floors is a family owned business that was
+                  established by Gil Garcia in 2004. Growing from a one-man company
+                  to what it is now, Eternity has, for the past 15 years, provided
+                  the highest quality in hardwood flooring to clients in the greater
+                  Los Angeles area. Our flooring services are rooted in our mission
+                  to create and innovate; we provide flooring services to fit apartments,
+                  small and large homes, offices, commercial settings, and we accommodate
+                  to any flooring design. We work closely with clients to ensure
+                  that we bring their vision to life, using the finest materials
+                  to fit all client needs and specifications in the process.
                 </p>
                 <p>
-                  Our creativity landed our work in many magazines like the
-                  Metropolitan and La Magazine. Under famous designers such as
-                  Kelly Wearstler, who exposed her vivid imagination and opened
-                  the door to Pacific Hardwood Flooring, we were able to do the
-                  most amazing layout and incredible color on hardwood floors.
-                  Tim Morrison trusted us to perform in many of his large projects,
-                  as well. This includes Barbara Streisand’s mansion in Malibu
-                  which put our skills to the ultimate level of high quality
-                  and craftsmanship. This was shown in her book “my passion for design”.
+                  Our notable work includes two of Sylvester Stallone’s ex wife
+                  anaheim homes where we had the opportunity to collaborate with
+                  Ms. Stallone in designing and installing hard wood flooring. The
+                  homes were featured in such and such Magazine. We also had the
+                  opportunity to work with several mansion owners in the Santa Monica
+                  and Beverly Hills area, repairing and installing hardwood flooring,
+                  and bringing their vision to life. These homes were also featured
+                  in such and such magazine.
                 </p>
                 <p>
-                  Pacific Hardwood Flooring have been serving the community for
-                  21 years from the smallest repair of damage on hardwood floors
+                  Eternity Hardwood Flooring has been serving the community for
+                  over a decade from the smallest repair of damage on hardwood floors
                   to installing the simplest or the most delicate pattern and style.
                 </p>
               </div>
