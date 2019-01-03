@@ -34,10 +34,9 @@ class Portfolio extends Component {
 
   setSinglePicture(picture, index){
     console.log(index)
-    console.log('hey')
     let opacityArray = this.state.opacityArray.slice()
     opacityArray.map((item, i) => {
-      console.log(i)
+      /*console.log(i)*/
       if(i === index) {
         opacityArray[i] = 'yes'
       } else {
@@ -73,6 +72,7 @@ class Portfolio extends Component {
   }
 
   rightRowSelection(currentRow) {
+    console.log(currentRow)
     let row
     let totalNumberOfRows = this.state.pictureRowArray.length
     if(currentRow < totalNumberOfRows) {row = 'middle'}
@@ -184,6 +184,9 @@ class Portfolio extends Component {
                   let firstImage = index+1, secondImage = index+2, thirdImage = index+3
                   let rowImage1 = this.state.rows, rowImage2 = this.state.rows+1, rowImage3 = this.state.rows+2
                   if ((firstImage === rowImage1) && (secondImage === rowImage2) && (thirdImage === rowImage3)){
+                    console.log(rowImage1)
+                    console.log(firstImage)
+                    console.log(this.state.rows)
                     return(
                       <Row className='pictureRow' key={index}>
                         <Col xs={2} className='photoCol'></Col>
