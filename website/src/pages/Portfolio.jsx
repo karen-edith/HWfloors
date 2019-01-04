@@ -125,8 +125,8 @@ class Portfolio extends Component {
   render() {
     let width = this.state.windowWidth
     let block
-    if(width <= 767) { block = 'below'}
-    else if (width > 767) { block ='next to'}
+    if(width <= 950) { block = 'below'}
+    else if (width > 950) { block ='next to'}
 
     switch(block) {
       case 'next to':
@@ -184,12 +184,10 @@ class Portfolio extends Component {
                   let firstImage = item+1, secondImage = item+2, thirdImage = item+3
                   let row = this.state.rows
                   let rowImage1 = row + 2*(row-1), rowImage2 = rowImage1+1, rowImage3 = rowImage1+2
-                  console.log(rowImage1, rowImage2, rowImage3)
-                  console.log(firstImage, secondImage, thirdImage)
                   if ((firstImage === rowImage1) && (secondImage === rowImage2) && (thirdImage === rowImage3)){
                       return(
                         <Row className='pictureRow' key={index}>
-                          <Col xs={2} className='photoCol'></Col>
+                          <Col xs={2} className='photoCol space'></Col>
                           <Col xs={1} className='photoCol menuRight'
                             onClick={()=>{
                             this.leftRowSelection(index+1);
@@ -199,13 +197,13 @@ class Portfolio extends Component {
                               this.setSinglePicture(this.state.pictureArray[item], item)
                             }
                           }}><Glyphicon glyph = 'menu-left' style={this.leftArrowColor()}/></Col>
-                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item], item)}}>
+                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol imgwidth' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item], item)}}>
                             <Image src={require('../images/galleryPhoto' + firstImage + '.jpg')} style={this.opacity(item)} responsive/>
                           </Col>
-                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+1], item+1)}}>
+                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol imgwidth' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+1], item+1)}}>
                             <Image src={require('../images/galleryPhoto' + secondImage + '.jpg')} style={this.opacity(item+1)} responsive/>
                           </Col>
-                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+2], item+2)}}>
+                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol imgwidth' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+2], item+2)}}>
                             <Image src={require('../images/galleryPhoto' + thirdImage + '.jpg')} style={this.opacity(item+2)} responsive/>
                           </Col>
                           <Col xs={1} className='photoCol menuLeft'
@@ -218,10 +216,10 @@ class Portfolio extends Component {
                               }}>
                               <Glyphicon glyph = 'menu-right' style={this.rightArrowColor()}/>
                           </Col>
-                          <Col xs={2} className='photoCol'></Col>
+                          <Col xs={2} className='photoCol spaces'></Col>
                         </Row>
                       )
-                    } else { console.log('here'); return null}
+                    } else return null
                 })
               }
             </Grid>

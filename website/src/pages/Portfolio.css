@@ -3,13 +3,20 @@
   cursor: pointer;
 }
 
-.singlePictureCol{
-  padding: 10px;
-  margin:10px;
+.singlePictureGrid{
+  text-align: center;
 }
 
 .singlePictureRow{
   display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.singlePictureCol{
+  padding: 10px;
+  margin:10px;
+  text-align: center;
 }
 
 .singlePhoto{
@@ -28,22 +35,21 @@
   margin-top: 5px;
   margin-left: 1px;
   margin-right: 1px;
-  border: 1px solid red;
 }
 
 .pictureRow5{
   margin-bottom: 5px;
   margin-left: 1px;
   margin-right: 1px;
-  border: 1px solid red;
 }
 
-@media screen and (min-width:768px){
+@media screen and (min-width:951px){
   .galleryContainer{
     display: flex;
     align-items: center;
-    margin-bottom: 3vw;
+    margin-bottom: calc(0.5vw + 60px);
     width: 100%;
+    margin-top: calc(0.5vw + 60px);
   }
 
   .singlePictureGrid{
@@ -52,6 +58,7 @@
     margin-left: 20px;
     margin-right: 20px;
     background-color: #E2E0E0;
+    border: 2px solid #A9A9A9;
   }
 
   .galleryPictureGrid{
@@ -61,31 +68,67 @@
 
 }
 
-@media screen and (max-width:767px){
+@media screen and (max-width:950px){
   .galleryContainer{
     align-items: center;
-    margin-bottom: 3vw;
+    margin-bottom: calc(0.5vw + 20px);
     width: 100%;
   }
 
   .singlePictureGrid{
-    width: 100%;
+    width: 98%;
     background-color: #E2E0E0;
     text-align: center;
+    border: 2px solid #A9A9A9;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 
-  /*.singlePhoto{
+  .singlePictureRow{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .singlePictureCol{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .singlePhoto{
     border: 7px solid white;
     border-radius: 10%;
     text-align: center;
     margin: 0 auto;
-  }*/
+    width: 85%;
+  }
 
   .galleryPictureGrid{
     width: 100%;
   }
 
 }
+
+@media screen and (min-width:768px) and (max-width:950px) {
+  .pictureRow{
+    text-align: center;
+    margin-top: 23px;
+  }
+
+  .space{
+    width: 3.8%;
+  }
+
+  .spaces{
+    width:3%;
+  }
+
+  .imgwidth{
+    width: 25%;
+  }
+}
+
 
 .menuRight, .menuLeft{
 }
