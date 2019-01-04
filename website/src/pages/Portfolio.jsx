@@ -181,48 +181,47 @@ class Portfolio extends Component {
             <Grid className='galleryPictureGrid' fluid>
               {
                 this.state.pictureRowArray.map((item, index) => {
-                  let firstImage = index+1, secondImage = index+2, thirdImage = index+3
-                  let rowImage1 = this.state.rows, rowImage2 = this.state.rows+1, rowImage3 = this.state.rows+2
+                  let firstImage = item+1, secondImage = item+2, thirdImage = item+3
+                  let row = this.state.rows
+                  let rowImage1 = row + 2*(row-1), rowImage2 = rowImage1+1, rowImage3 = rowImage1+2
+                  console.log(rowImage1, rowImage2, rowImage3)
+                  console.log(firstImage, secondImage, thirdImage)
                   if ((firstImage === rowImage1) && (secondImage === rowImage2) && (thirdImage === rowImage3)){
-                    console.log(rowImage1)
-                    console.log(firstImage)
-                    console.log(this.state.rows)
-                    return(
-                      <Row className='pictureRow' key={index}>
-                        <Col xs={2} className='photoCol'></Col>
-                        <Col xs={1} className='photoCol menuRight'
-                          onClick={()=>{
-                          this.leftRowSelection(index+1);
-                          if((index+1>1) && (index+1<=this.state.pictureRowArray.length)){
-                            this.setSinglePicture(this.state.pictureArray[item-3], item-3)
-                          } else if(index+1 === 1){
-                            this.setSinglePicture(this.state.pictureArray[item], item)
-                          }
-                        }}><Glyphicon glyph = 'menu-left' style={this.leftArrowColor()}/></Col>
-                        <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item], item)}}>
-                          <Image src={require('../images/galleryPhoto' + firstImage + '.jpg')} style={this.opacity(item)} responsive/>
-                        </Col>
-                        <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+1], item+1)}}>
-                          <Image src={require('../images/galleryPhoto' + secondImage + '.jpg')} style={this.opacity(item+1)} responsive/>
-                        </Col>
-                        <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+2], item+2)}}>
-                          <Image src={require('../images/galleryPhoto' + thirdImage + '.jpg')} style={this.opacity(item+2)} responsive/>
-                        </Col>
-                        <Col xs={1} className='photoCol menuLeft'
-                          onClick={()=>{this.rightRowSelection(index+1);
-                            if(index+1 < this.state.pictureRowArray.length){
-                              this.setSinglePicture(this.state.pictureArray[item+3], item+3)
-                            } else if(index+1 === this.state.pictureRowArray.length){
+                      return(
+                        <Row className='pictureRow' key={index}>
+                          <Col xs={2} className='photoCol'></Col>
+                          <Col xs={1} className='photoCol menuRight'
+                            onClick={()=>{
+                            this.leftRowSelection(index+1);
+                            if((index+1>1) && (index+1<=this.state.pictureRowArray.length)){
+                              this.setSinglePicture(this.state.pictureArray[item-3], item-3)
+                            } else if(index+1 === 1){
                               this.setSinglePicture(this.state.pictureArray[item], item)
                             }
-                            }}>
-                            <Glyphicon glyph = 'menu-right' style={this.rightArrowColor()}/>
-                        </Col>
-                        <Col xs={2} className='photoCol'></Col>
-                      </Row>
-                    )
-                  } else return null
-
+                          }}><Glyphicon glyph = 'menu-left' style={this.leftArrowColor()}/></Col>
+                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item], item)}}>
+                            <Image src={require('../images/galleryPhoto' + firstImage + '.jpg')} style={this.opacity(item)} responsive/>
+                          </Col>
+                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+1], item+1)}}>
+                            <Image src={require('../images/galleryPhoto' + secondImage + '.jpg')} style={this.opacity(item+1)} responsive/>
+                          </Col>
+                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+2], item+2)}}>
+                            <Image src={require('../images/galleryPhoto' + thirdImage + '.jpg')} style={this.opacity(item+2)} responsive/>
+                          </Col>
+                          <Col xs={1} className='photoCol menuLeft'
+                            onClick={()=>{this.rightRowSelection(index+1);
+                              if(index+1 < this.state.pictureRowArray.length){
+                                this.setSinglePicture(this.state.pictureArray[item+3], item+3)
+                              } else if(index+1 === this.state.pictureRowArray.length){
+                                this.setSinglePicture(this.state.pictureArray[item], item)
+                              }
+                              }}>
+                              <Glyphicon glyph = 'menu-right' style={this.rightArrowColor()}/>
+                          </Col>
+                          <Col xs={2} className='photoCol'></Col>
+                        </Row>
+                      )
+                    } else { console.log('here'); return null}
                 })
               }
             </Grid>
