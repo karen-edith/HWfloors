@@ -187,8 +187,8 @@ class Portfolio extends Component {
                   if ((firstImage === rowImage1) && (secondImage === rowImage2) && (thirdImage === rowImage3)){
                       return(
                         <Row className='pictureRow' key={index}>
-                          <Col xs={2} className='photoCol space'></Col>
-                          <Col xs={1} className='photoCol menuRight'
+                          <Col xs={2} className='photoCol space vcenter'></Col>
+                          <Col xs={1} className='photoCol vcenter'
                             onClick={()=>{
                             this.leftRowSelection(index+1);
                             if((index+1>1) && (index+1<=this.state.pictureRowArray.length)){
@@ -196,17 +196,19 @@ class Portfolio extends Component {
                             } else if(index+1 === 1){
                               this.setSinglePicture(this.state.pictureArray[item], item)
                             }
-                          }}><Glyphicon glyph = 'menu-left' style={this.leftArrowColor()}/></Col>
-                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol imgwidth' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item], item)}}>
+                          }}>
+                            <Glyphicon glyph = 'menu-left' style={this.leftArrowColor()}/>
+                          </Col>
+                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol imgwidth vcenter' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item], item)}}>
                             <Image src={require('../images/galleryPhoto' + firstImage + '.jpg')} style={this.opacity(item)} responsive/>
                           </Col>
-                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol imgwidth' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+1], item+1)}}>
+                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol imgwidth vcenter' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+1], item+1)}}>
                             <Image src={require('../images/galleryPhoto' + secondImage + '.jpg')} style={this.opacity(item+1)} responsive/>
                           </Col>
-                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol imgwidth' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+2], item+2)}}>
+                          <Col xs={2} sm={4} md={4} lg={4} xl={4} className='photoCol imgwidth vcenter' onClick={()=>{this.setSinglePicture(this.state.pictureArray[item+2], item+2)}}>
                             <Image src={require('../images/galleryPhoto' + thirdImage + '.jpg')} style={this.opacity(item+2)} responsive/>
                           </Col>
-                          <Col xs={1} className='photoCol menuLeft'
+                          <Col xs={1} className='photoCol vcenter'
                             onClick={()=>{this.rightRowSelection(index+1);
                               if(index+1 < this.state.pictureRowArray.length){
                                 this.setSinglePicture(this.state.pictureArray[item+3], item+3)
@@ -216,7 +218,7 @@ class Portfolio extends Component {
                               }}>
                               <Glyphicon glyph = 'menu-right' style={this.rightArrowColor()}/>
                           </Col>
-                          <Col xs={2} className='photoCol spaces'></Col>
+                          <Col xs={2} className='photoCol spaces vcenter'></Col>
                         </Row>
                       )
                     } else return null
