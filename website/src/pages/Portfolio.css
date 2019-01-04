@@ -21,7 +21,7 @@
 
 .singlePhoto{
   border: 7px solid white;
-  border-radius: 10%;
+  border-radius: 25px;
 }
 
 .pictureRow{
@@ -58,7 +58,8 @@
     margin-left: 20px;
     margin-right: 20px;
     background-color: #E2E0E0;
-    border: 2px solid #A9A9A9;
+    /*border: 2px solid #A9A9A9;*/
+    border-radius: 25px;
   }
 
   .galleryPictureGrid{
@@ -76,12 +77,13 @@
   }
 
   .singlePictureGrid{
-    width: 98%;
+    width: 96%;
     background-color: #E2E0E0;
     text-align: center;
-    border: 2px solid #A9A9A9;
+    /*border: 2px solid #A9A9A9;*/
     padding-top: 25px;
     padding-bottom: 25px;
+    border-radius: 25px;
   }
 
   .singlePictureRow{
@@ -98,7 +100,7 @@
 
   .singlePhoto{
     border: 7px solid white;
-    border-radius: 10%;
+    border-radius: 25px;
     text-align: center;
     margin: 0 auto;
     width: 85%;

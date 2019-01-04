@@ -2,6 +2,7 @@
   box-shadow: 5px 5px 10px #A9A9A9;
   width: 96%;
   margin: 0 auto;
+  border-radius: 25px;
 }
 
 .aboutusgrid{
@@ -13,6 +14,7 @@
   background-color: #DBDADA;
   font-weight: lighter;
   font-family: Hiragino Mincho ProN;
+  border-radius: 25px;
 }
 
 .aboutuscol1{
@@ -38,7 +40,7 @@
   margin: 0 auto;
   text-align: center;
   border: 5px solid #A9A9A9;
-  border-radius: 10%;
+  border-radius: 25px;
 }
 
 @media screen and (max-width:992px) {
