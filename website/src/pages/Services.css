@@ -1,6 +1,5 @@
 .servicesGrid{
   width: 98%;
-  border: 1px solid blue;
 }
 
 .servicesCol {
@@ -30,7 +29,6 @@
   font-style: italic;
   font-weight: lighter;
   margin-bottom: 10px;
-  border: 1px solid red;
 }
 
 .servicesRow {
@@ -68,13 +66,12 @@
   position: relative;
   margin-bottom: 20px;
   width:100%;
-  border:1px solid blue;
 }
 
 .leftArrow{
   position:absolute;
   top:50%;
-  left:2%;
+  left:5%;
   z-index: 10;
   color: white;
   opacity: 0.5;
@@ -84,7 +81,7 @@
 .rightArrow{
   position:absolute;
   top:50%;
-  right:2%;
+  right:5%;
   z-index: 10;
   color: white;
   opacity: 0.5;
@@ -165,10 +162,16 @@
   background-color: white;
 }
 
-@media screen and (min-width: 768px) and (max-width:3000px){
-
+@media screen and (min-width: 889px) and (max-width:3000px){
   .pictureGrid{
     margin-top: calc(0.2vw + 5px);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width:888px){
+
+  .pictureGrid{
+    margin-top: calc(0.2vw + 20px);
   }
 }
 
@@ -185,8 +188,8 @@
     font-size: calc(0.5vw + 9px);
   }
 
-  .pictureGrid{
-    margin-top: calc(0.5vw + 10px);
+  .servicesDescriptionContainer, .backgroundDescription, .frontDescription{
+    height: 250px;
   }
 }
 
@@ -203,8 +206,8 @@
     font-size: calc(0.5vw + 9px);
   }
 
-  .pictureGrid{
-    margin-top: calc(0.5vw + 50px);
+  .servicesDescriptionContainer, .backgroundDescription, .frontDescription{
+    height: 270px;
   }
 }
 
@@ -215,9 +218,6 @@
     width:100%;
   }
 
-  .pictureGrid{
-    margin-top: calc(0.5vw + 85px);
-  }
 
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
@@ -225,6 +225,10 @@
 
   .servicesColBottomDescription {
     font-size: calc(0.5vw + 11px);
+  }
+
+  .servicesDescriptionContainer, .backgroundDescription, .frontDescription{
+    height: 315px;
   }
 }
 
@@ -234,16 +238,16 @@
     width:100%;
   }
 
-  .pictureGrid{
-    margin-top: calc(0.5vw + 110px);
-  }
-
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
   }
 
   .servicesColBottomDescription {
     font-size: calc(0.5vw + 11px);
+  }
+
+  .servicesDescriptionContainer, .backgroundDescription, .frontDescription{
+    height: 345px;
   }
 }
 
@@ -253,16 +257,16 @@
     width:100%;
   }
 
-  .pictureGrid{
-    margin-top: calc(0.5vw + 130px);
-  }
-
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
   }
 
   .servicesColBottomDescription {
     font-size: calc(0.5vw + 11px);
+  }
+
+  .servicesDescriptionContainer, .backgroundDescription, .frontDescription{
+    height: 375px;
   }
 }
 
@@ -272,16 +276,16 @@
     width:100%;
   }
 
-  .pictureGrid{
-    margin-top: calc(0.5vw + 158px);
-  }
-
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
   }
 
   .servicesColBottomDescription {
     font-size: calc(0.5vw + 11px);
+  }
+
+  .servicesDescriptionContainer, .backgroundDescription, .frontDescription{
+    height: 400px;
   }
 }
 
@@ -291,16 +295,16 @@
     width:100%;
   }
 
-  .pictureGrid{
-    margin-top: calc(0.5vw + 175px);
-  }
-
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
   }
 
   .servicesColBottomDescription {
     font-size: calc(0.5vw + 11px);
+  }
+
+  .servicesDescriptionContainer, .backgroundDescription, .frontDescription{
+    height: 415px;
   }
 }
 
@@ -310,16 +314,16 @@
     width:100%;
   }
 
-  .pictureGrid{
-    margin-top: calc(0.5vw + 200px);
-  }
-
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
   }
 
   .servicesColBottomDescription {
     font-size: calc(0.5vw + 11px);
+  }
+
+  .servicesDescriptionContainer, .backgroundDescription, .frontDescription{
+    height: 420px;
   }
 }
 
@@ -329,16 +333,16 @@
     width:100%;
   }
 
-  .pictureGrid{
-    margin-top: calc(0.5vw + 225px);
-  }
-
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
   }
 
   .servicesColBottomDescription {
     font-size: calc(0.5vw + 11px);
+  }
+
+  .servicesDescriptionContainer, .backgroundDescription, .frontDescription{
+    height: 453px;
   }
 }
 
@@ -348,15 +352,15 @@
     width:100%;
   }
 
-  .pictureGrid{
-    margin-top: calc(0.5vw + 250px);
-  }
-
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
   }
 
   .servicesColBottomDescription {
     font-size: calc(0.5vw + 11px);
+  }
+
+  .servicesDescriptionContainer, .backgroundDescription, .frontDescription{
+    height: 505px;
   }
 }
