@@ -107,22 +107,26 @@
 }
 
 @keyframes leftmove {
-    0%   {transform: translateX(0px);}
-    100% {transform: translateX(-2999px);}
+  0%   {transform: translateX(0px); opacity:1}
+  90%  {transform: translateX(-2999px); opacity:1;}
+  95%  {opacity:0;}
+  100% {transform: translateX(0px); opacity:0}
 }
 
 @keyframes rightmove {
-    0%   {transform: translateX(0px);}
-    100% {transform: translateX(2999px);}
+  0%   {transform: translateX(0px); opacity:1}
+  90%  {transform: translateX(2999px); opacity:1;}
+  95%  {opacity:0;}
+  100% {transform: translateX(0px); opacity:0}
 }
 
 .lefttransx{
-  animation: leftmove 5s;
+  animation: leftmove 4s;
   animation-fill-mode: forwards;
 }
 
 .lefttransition{
-  animation: leftmove 5s;
+  animation: leftmove 4s;
   animation-fill-mode: forwards;
 }
 
@@ -134,7 +138,10 @@
 .righttransition{
   animation: rightmove 5s;
   animation-fill-mode: forwards;
+
 }
+
+
 
 .hide{
   visibility: hidden;
