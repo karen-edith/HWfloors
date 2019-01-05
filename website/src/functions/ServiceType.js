@@ -5,7 +5,7 @@ var ServiceType = function() {
   return {
     installing: function() {
       return(
-        <Grid className='serviceGrid' fluid>
+        <Grid className='servicesGrid' fluid>
           <Row className='servicesRow'>
           <Col className='servicesCol' xs={5} sm={5} md={5} lg={5} xl={5}>
             <div className='servicesColTitle'> Hardwood Floor Installation</div>
