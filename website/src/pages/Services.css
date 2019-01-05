@@ -108,12 +108,12 @@
 
 @keyframes leftmove {
     0%   {transform: translateX(0px);}
-    100% {transform: translateX(-999px);}
+    100% {transform: translateX(-2999px);}
 }
 
 @keyframes rightmove {
     0%   {transform: translateX(0px);}
-    100% {transform: translateX(999px);}
+    100% {transform: translateX(2999px);}
 }
 
 .lefttransx{

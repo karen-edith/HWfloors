@@ -29,10 +29,11 @@ class Services extends Component {
 
   backgroundStyles(){
     return{
-        background: `url(${this.state.backgroundPhoto})`,
-        backgroundRepeat:'no-repeat',
-        backgroundSize:'contain',
-        backgroundPosition:'center'
+        background: `url(${this.state.backgroundPhoto}) no-repeat center center/cover`,
+        /*backgroundSize:'contain',*/
+        /*backgroundSize:'cover',*/
+        /*backgroundPosition:'center',*/
+
     }
   }
 
