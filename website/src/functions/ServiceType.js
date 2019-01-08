@@ -7,7 +7,7 @@ var ServiceType = function() {
       return(
         <Grid className='servicesGrid' fluid>
           <Row className='servicesRow'>
-          <Col className='servicesCol' xs={5} sm={5} md={5} lg={5} xl={5}>
+          <Col className='servicesCol valign' xs={5} sm={5} md={5} lg={5} xl={5}>
             <div className='servicesColTitle'> Hardwood Floor Installation</div>
             <div className='servicesColLine'> </div>
           </Col>

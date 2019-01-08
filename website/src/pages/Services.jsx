@@ -100,21 +100,21 @@ class Services extends Component {
         )
         }
 
-        <Grid className='pictureGrid test' fluid>
+        <Grid className='pictureGrid' fluid>
           <Row style={this.backgroundStyles()} className='pictureRowCenter'>
             {
               !this.state.forwards ?
               (
                   <div>
-                    <div className='test'><Image className={!this.state.switch ? 'ImageWidth none' : 'hide'} src={this.state.currentPhoto} responsive /></div>
-                    <div className='test'><Image className={(this.state.something)? 'ImageWidth hide' : (!this.state.switch ? 'ImageWidth hide' : 'ImageWdith lefttransx test')} src={this.state.currentPhoto} responsive /></div>
-                    <div className='test'><Image className={(this.state.something )? 'ImageWidth lefttransition test' : 'ImageWdith hide' } src={this.state.currentPhoto} responsive /></div>
+                    <div className='imgsize'><Image className={!this.state.switch ? 'ImageWidth none' : 'hide'} src={this.state.currentPhoto} responsive /></div>
+                    <div className='imgsize'><Image className={(this.state.something)? 'ImageWidth hide' : (!this.state.switch ? 'ImageWidth hide' : 'ImageWdith lefttransx test')} src={this.state.currentPhoto} responsive /></div>
+                    <div className='imgsize'><Image className={(this.state.something )? 'ImageWidth lefttransition test' : 'ImageWdith hide' } src={this.state.currentPhoto} responsive /></div>
                   </div>
               ):
               (
                   <div>
-                    <div className='test'><Image className={(this.state.something)? 'ImageWidth hide' : (!this.state.switch ? 'ImageWidth hide' : 'ImageWdith righttransx test')} src={this.state.currentPhoto} responsive /></div>
-                    <div className='test'><Image className={(this.state.something )? 'ImageWidth righttransition test' : 'ImageWdith hide' } src={this.state.currentPhoto} responsive /></div>
+                    <div className='imgsize'><Image className={(this.state.something)? 'ImageWidth hide' : (!this.state.switch ? 'ImageWidth hide' : 'ImageWdith righttransx test')} src={this.state.currentPhoto} responsive /></div>
+                    <div className='imgsize'><Image className={(this.state.something )? 'ImageWidth righttransition test' : 'ImageWdith hide' } src={this.state.currentPhoto} responsive /></div>
                   </div>
               )
             }

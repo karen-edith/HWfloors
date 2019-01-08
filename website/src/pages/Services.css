@@ -14,6 +14,7 @@
 
 .servicesColLine {
   border-top: 2px solid #EAE7E7;
+  padding: 10px;
 }
 
 .servicesColDescription {
@@ -71,7 +72,7 @@
 
 .leftArrow{
   position:absolute;
-  top:50%;
+  top:45%;
   left:5%;
   z-index: 10;
   color: white;
@@ -81,7 +82,7 @@
 
 .rightArrow{
   position:absolute;
-  top:50%;
+  top:45%;
   right:5%;
   z-index: 10;
   color: white;
@@ -179,11 +180,19 @@
   .pictureGrid{
     margin-top: calc(0.2vw + 20px);
   }
+
+  .servicesColTitle {
+    text-align: center;
+  }
 }
 
 @media screen and (min-width: 501px) and (max-width: 767px){
   .servicesCol{
     width:100%;
+  }
+
+  .servicesColTitle {
+    text-align: center;
   }
 
   .servicesColDescription {
@@ -202,6 +211,10 @@
 @media screen and (min-width: 431px) and (max-width: 500px){
   .servicesCol{
     width:100%;
+  }
+
+  .servicesColTitle {
+    text-align: center;
   }
 
   .servicesColDescription {
@@ -224,6 +237,9 @@
     width:100%;
   }
 
+  .servicesColTitle {
+    text-align: center;
+  }
 
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
@@ -242,6 +258,10 @@
 
   .servicesCol{
     width:100%;
+  }
+
+  .servicesColTitle {
+    text-align: center;
   }
 
   .servicesColDescription {
@@ -263,6 +283,10 @@
     width:100%;
   }
 
+  .servicesColTitle {
+    text-align: center;
+  }
+
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
   }
@@ -280,6 +304,10 @@
 
   .servicesCol{
     width:100%;
+  }
+
+  .servicesColTitle {
+    text-align: center;
   }
 
   .servicesColDescription {
@@ -301,6 +329,10 @@
     width:100%;
   }
 
+  .servicesColTitle {
+    text-align: center;
+  }
+
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
   }
@@ -318,6 +350,10 @@
 
   .servicesCol{
     width:100%;
+  }
+
+  .servicesColTitle {
+    text-align: center;
   }
 
   .servicesColDescription {
@@ -339,6 +375,10 @@
     width:100%;
   }
 
+  .servicesColTitle {
+    text-align: center;
+  }
+
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
   }
@@ -358,6 +398,10 @@
     width:100%;
   }
 
+  .servicesColTitle {
+    text-align: center;
+  }
+
   .servicesColDescription {
     font-size: calc(0.5vw + 10px);
   }
@@ -371,7 +415,7 @@
   }
 }
 
-.test{
+.imgsize{
   margin: 0 auto;
   width:100%;
 }
