@@ -66,6 +66,7 @@
   position: relative;
   margin-bottom: 20px;
   width:100%;
+  background-color: white;
 }
 
 .leftArrow{
@@ -107,26 +108,26 @@
 }
 
 @keyframes leftmove {
-  0%   {transform: translateX(0px); opacity:1}
+  0%   {transform: translateX(0px); opacity:1;}
   90%  {transform: translateX(-2999px); opacity:1;}
   95%  {opacity:0;}
-  100% {transform: translateX(0px); opacity:0}
+  100% {transform: translateX(0px); opacity:0;}
 }
 
 @keyframes rightmove {
-  0%   {transform: translateX(0px); opacity:1}
+  0%   {transform: translateX(0px); opacity:1;}
   90%  {transform: translateX(2999px); opacity:1;}
   95%  {opacity:0;}
-  100% {transform: translateX(0px); opacity:0}
+  100% {transform: translateX(0px); opacity:0;}
 }
 
 .lefttransx{
-  animation: leftmove 4s;
+  animation: leftmove 5s;
   animation-fill-mode: forwards;
 }
 
 .lefttransition{
-  animation: leftmove 4s;
+  animation: leftmove 5s;
   animation-fill-mode: forwards;
 }
 
@@ -140,8 +141,6 @@
   animation-fill-mode: forwards;
 
 }
-
-
 
 .hide{
   visibility: hidden;
@@ -370,4 +369,9 @@
   .servicesDescriptionContainer, .backgroundDescription, .frontDescription{
     height: 505px;
   }
+}
+
+.test{
+  margin: 0 auto;
+  width:100%;
 }
