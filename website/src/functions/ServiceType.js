@@ -7,23 +7,22 @@ var ServiceType = function() {
       return(
         <Grid className='servicesGrid' fluid>
           <Row className='servicesRow'>
-          <Col className='servicesCol valign' xs={5} sm={5} md={5} lg={5} xl={5}>
-            <div className='servicesColTitle'> Hardwood Floor Installation</div>
-            <div className='servicesColLine'> </div>
+          <Col className='servicesCol' xs={5} sm={5} md={5} lg={5} xl={5}>
+            <div className='servicesColTitle'> Installing </div>
           </Col>
           <Col className='servicesCol' xs={7} sm={7} md={7} lg={7} xl={7}>
             <div className='servicesColDescription'>
               For dedication in providing you with the best service – from
-              the initial call to the handshake at the end of the job – All
-              City Hardwood Floors is #1! We have many years of experience and
-              can install on just about all sub-flooring surfaces. All City
-              Hardwood Floors can even build sub-flooring before we install
-              your wood floors! Our installation services include: Removal of old floor (carpet, etc.),
+              the initial call to the handshake at the end of the job – Eternity
+              Hardwood Floors is #1! We have many years of experience and
+              can install on just about all sub-flooring surfaces. Eternity
+              can even build sub-flooring before we install your wood floors!
+              Our installation services include: Removal of old floor (carpet, etc.),
               Glue down installations, Nail down installations, Sub-floor building,
               Installing over existing foundations and Installing over concrete slabs.
             </div>
             <div className='servicesColBottomDescription'>
-              We have many years of experience and can install on just about all sub-flooring surfaces
+              We have 15 years of experience and can install on just about all sub-flooring surfaces
             </div>
           </Col>
           </Row>
@@ -36,8 +35,7 @@ var ServiceType = function() {
         <Grid className='servicesGrid' fluid>
           <Row className='servicesRow'>
             <Col className='servicesCol' xs={5} sm={5} md={5} lg={5} xl={5}>
-              <div className='servicesColTitle'> Hardwood Floor Finishing</div>
-              <div className='servicesColLine'> </div>
+              <div className='servicesColTitle'> Finishing</div>
             </Col>
             <Col className='servicesCol' xs={7} sm={7} md={7} lg={7} xl={7}>
               <div className='servicesColDescription'>
@@ -51,7 +49,7 @@ var ServiceType = function() {
                 Polyurethane coating
               </div>
               <div className='servicesColBottomDescription'>
-                All City Hardwood Floors, Inc has Highly Skilled and Experienced
+                Eternity Hardwood Floors, Inc has Highly Skilled and Experienced
                 Installers, Licensed and Bonded in the State of California. All
                 City Hardwood Floors provides detailed and clear estimates and
                 written contracts.
@@ -67,12 +65,11 @@ var ServiceType = function() {
         <Grid className='servicesGrid' fluid>
           <Row className='servicesRow'>
             <Col className='servicesCol' xs={5} sm={5} md={5} lg={5} xl={5}>
-              <div className='servicesColTitle'> Hardwood Floor repairing</div>
-              <div className='servicesColLine'> </div>
+              <div className='servicesColTitle'> Repairing</div>
             </Col>
             <Col className='servicesCol' xs={7} sm={7} md={7} lg={7} xl={7}>
               <div className='servicesColDescription'>
-                All City Hardwood Floors can restore your hardwood floors to look
+                Eternity Hardwood Floors can restore your hardwood floors to look
                  like new! We use top quality finishes and restoration products
                  and techniques to ensure you a fabulous floor. Sanding provides
                  a method for smoothing an installed floor, compensating for

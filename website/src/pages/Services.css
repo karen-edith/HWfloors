@@ -4,17 +4,21 @@
 
 .servicesCol {
   font-family: Hiragino Mincho ProN;
+  margin: 0 auto;
 }
 
 .servicesColTitle {
   color: #51575C;
   font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.servicesColLine {
-  border-top: 2px solid #EAE7E7;
-  padding: 10px;
+  background-color: #d3d3d3;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  padding: 5px;
+  border: 30px solid  #F0EDED;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  /*box-shadow: 1px 1px 2px #A9A9A9;*/
 }
 
 .servicesColDescription {
@@ -180,15 +184,15 @@
   .pictureGrid{
     margin-top: calc(0.2vw + 20px);
   }
-
-  .servicesColTitle {
-    text-align: center;
-  }
 }
 
 @media screen and (min-width: 501px) and (max-width: 767px){
   .servicesCol{
     width:100%;
+  }
+
+  .servicesColTitle {
+    border: 10px solid  #F0EDED;
   }
 
   .servicesColTitle {
@@ -211,6 +215,10 @@
 @media screen and (min-width: 431px) and (max-width: 500px){
   .servicesCol{
     width:100%;
+  }
+
+  .servicesColTitle {
+    border: 10px solid  #F0EDED;
   }
 
   .servicesColTitle {
@@ -238,6 +246,10 @@
   }
 
   .servicesColTitle {
+    border: 10px solid  #F0EDED;
+  }
+
+  .servicesColTitle {
     text-align: center;
   }
 
@@ -258,6 +270,10 @@
 
   .servicesCol{
     width:100%;
+  }
+
+  .servicesColTitle {
+    border: 10px solid  #F0EDED;
   }
 
   .servicesColTitle {
@@ -284,6 +300,10 @@
   }
 
   .servicesColTitle {
+    border: 10px solid  #F0EDED;
+  }
+
+  .servicesColTitle {
     text-align: center;
   }
 
@@ -304,6 +324,10 @@
 
   .servicesCol{
     width:100%;
+  }
+
+  .servicesColTitle {
+    border: 10px solid  #F0EDED;
   }
 
   .servicesColTitle {
@@ -330,6 +354,10 @@
   }
 
   .servicesColTitle {
+    border: 10px solid  #F0EDED;
+  }
+
+  .servicesColTitle {
     text-align: center;
   }
 
@@ -350,6 +378,10 @@
 
   .servicesCol{
     width:100%;
+  }
+
+  .servicesColTitle {
+    border: 10px solid  #F0EDED;
   }
 
   .servicesColTitle {
@@ -376,6 +408,10 @@
   }
 
   .servicesColTitle {
+    border: 10px solid  #F0EDED;
+  }
+
+  .servicesColTitle {
     text-align: center;
   }
 
@@ -396,6 +432,10 @@
 
   .servicesCol{
     width:100%;
+  }
+
+  .servicesColTitle {
+    border: 10px solid  #F0EDED;
   }
 
   .servicesColTitle {
