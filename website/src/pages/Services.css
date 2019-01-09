@@ -9,7 +9,7 @@
 
 .servicesColTitle {
   color: #51575C;
-  font-size: 20px;
+  font-size: calc(0.5vw + 20px);
   background-color: #d3d3d3;
   border-radius: 10px;
   text-align: center;
